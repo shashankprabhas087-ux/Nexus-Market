@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import HeroBanner from '../components/home/HeroBanner';
 import CategoryTiles from '../components/home/CategoryTiles';
 import LightningDeals from '../components/home/LightningDeals';

@@ -1,9 +1,9 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { useAuth, AuthProvider } from './context/AuthContext';
 import PageShell from './components/layout/PageShell';
 import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
-import { AuthProvider } from './context/AuthContext';
 
 const Home = lazy(() => import('./pages/Home'));
 const Catalog = lazy(() => import('./pages/Catalog'));
@@ -28,6 +28,12 @@ function RouteLoadingFallback() {
   );
 }
 
+// Component to protect the index route: show Home if authenticated, otherwise redirect to login
+const AuthIndex = () => {
+  const { isAuthenticated } = useAuth();
+  return isAuthenticated ? <Home /> : <Navigate to="/login" replace />;
+};
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -37,7 +43,7 @@ export default function App() {
             <Suspense fallback={<RouteLoadingFallback />}>
               <Routes>
                 <Route path="/" element={<PageShell />}>
-                  <Route index element={<Home />} />
+                  <Route index element={<AuthIndex />} />
                   <Route path="search" element={<Catalog />} />
                   <Route path="product/:id" element={<ProductDetail />} />
                   <Route path="cart" element={<Cart />} />

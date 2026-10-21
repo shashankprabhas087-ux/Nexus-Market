@@ -19,12 +19,12 @@ export default function AuthForm({ initialMode = 'login' }) {
     } else {
       register(name, email, password);
     }
-    navigate('/account/profile');
+    navigate('/');
   };
 
   const handleDemoSignIn = () => {
     login('marcus.vance@nexuscorp.io', 'NexusShield#2024');
-    navigate('/account/profile');
+    navigate('/');
   };
 
   return (

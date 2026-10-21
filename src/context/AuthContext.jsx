@@ -23,9 +23,9 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
     try {
       const local = window.localStorage.getItem('nexus_auth_user');
-      return local ? JSON.parse(local) : DEFAULT_USER;
+      return local ? JSON.parse(local) : null;
     } catch {
-      return DEFAULT_USER;
+      return null;
     }
   });
 
