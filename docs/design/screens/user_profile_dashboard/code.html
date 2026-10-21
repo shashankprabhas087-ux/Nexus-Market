@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile &amp; Account Dashboard | NEXUS Market</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "background": "#f8f9ff",
+            "error-container": "#ffdad6",
+            "tertiary": "#000000",
+            "on-surface": "#0b1c30",
+            "secondary-fixed-dim": "#ffb4a3",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "inverse-surface": "#213145",
+            "primary-container": "#131b2e",
+            "surface": "#f8f9ff",
+            "on-tertiary-fixed": "#2a1700",
+            "surface-variant": "#d3e4fe",
+            "tertiary-container": "#2a1700",
+            "error": "#ba1a1a",
+            "surface-bright": "#f8f9ff",
+            "on-surface-variant": "#45464d",
+            "secondary-fixed": "#ffdad2",
+            "on-primary-fixed-variant": "#3f465c",
+            "surface-container": "#e5eeff",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-error": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-container": "#fd5835",
+            "on-secondary-fixed": "#3d0600",
+            "on-background": "#0b1c30",
+            "inverse-on-surface": "#eaf1ff",
+            "secondary": "#b52603",
+            "on-error-container": "#93000a",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#570c00",
+            "surface-tint": "#565e74",
+            "on-secondary": "#ffffff",
+            "primary": "#000000",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-secondary-fixed-variant": "#8c1900",
+            "surface-container-highest": "#d3e4fe",
+            "on-primary-fixed": "#131b2e",
+            "outline": "#76777d",
+            "tertiary-fixed": "#ffddb8",
+            "primary-fixed-dim": "#bec6e0",
+            "surface-dim": "#cbdbf5",
+            "inverse-primary": "#bec6e0",
+            "on-tertiary-container": "#b87500",
+            "outline-variant": "#c6c6cd",
+            "primary-fixed": "#dae2fd",
+            "on-primary-container": "#7c839b",
+            "surface-container-high": "#dce9ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "space-xl": "2rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.25rem",
+            "gutter-mobile": "0.5rem",
+            "margin-mobile": "1rem"
+          },
+          "fontFamily": {
+            "display-hero": [
+              "Plus Jakarta Sans"
+            ],
+            "label-md": [
+              "Inter"
+            ],
+            "headline-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-lg-mobile": [
+              "Plus Jakarta Sans"
+            ],
+            "price-hero": [
+              "Plus Jakarta Sans"
+            ],
+            "display-hero-mobile": [
+              "Plus Jakarta Sans"
+            ],
+            "price-strikethrough": [
+              "Inter"
+            ],
+            "body-md": [
+              "Inter"
+            ],
+            "body-sm": [
+              "Inter"
+            ],
+            "body-lg": [
+              "Inter"
+            ],
+            "headline-md": [
+              "Plus Jakarta Sans"
+            ],
+            "price-card": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "label-sm": [
+              "Inter"
+            ]
+          },
+          "fontSize": {
+            "display-hero": [
+              "48px",
+              {
+                "lineHeight": "52px",
+                "letterSpacing": "-0.03em",
+                "fontWeight": "800"
+              }
+            ],
+            "label-md": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "letterSpacing": "0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-lg": [
+              "30px",
+              {
+                "lineHeight": "36px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "headline-lg-mobile": [
+              "24px",
+              {
+                "lineHeight": "30px",
+                "letterSpacing": "-0.015em",
+                "fontWeight": "700"
+              }
+            ],
+            "price-hero": [
+              "28px",
+              {
+                "lineHeight": "32px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "800"
+              }
+            ],
+            "display-hero-mobile": [
+              "32px",
+              {
+                "lineHeight": "38px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "800"
+              }
+            ],
+            "price-strikethrough": [
+              "13px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0em",
+                "fontWeight": "400"
+              }
+            ],
+            "body-md": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "letterSpacing": "-0.005em",
+                "fontWeight": "400"
+              }
+            ],
+            "body-sm": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0em",
+                "fontWeight": "400"
+              }
+            ],
+            "body-lg": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-md": [
+              "20px",
+              {
+                "lineHeight": "26px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "700"
+              }
+            ],
+            "price-card": [
+              "18px",
+              {
+                "lineHeight": "22px",
+                "letterSpacing": "-0.015em",
+                "fontWeight": "800"
+              }
+            ],
+            "headline-sm": [
+              "16px",
+              {
+                "lineHeight": "22px",
+                "letterSpacing": "-0.005em",
+                "fontWeight": "600"
+              }
+            ],
+            "label-sm": [
+              "11px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.04em",
+                "fontWeight": "700"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .material-symbols-outlined[data-weight="fill"] {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-secondary-container selection:text-on-primary">
+<!-- TopNavBar (Shared Component from JSON) -->
+<header class="w-full bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none sticky top-0 z-50">
+<!-- Top Utility & Brand Bar -->
+<div class="w-full px-4 md:px-8 max-w-[1440px] mx-auto flex items-center justify-between gap-4 py-2.5">
+<!-- Left: Logo & Search -->
+<div class="flex items-center gap-6 flex-1 max-w-3xl">
+<a class="text-headline-lg font-headline-lg font-extrabold text-on-surface dark:text-inverse-on-surface tracking-tight uppercase hover:text-secondary-container transition-colors duration-150 shrink-0" href="#">
+          NEXUS Market
+        </a>
+<!-- Search bar on left -->
+<div class="relative w-full hidden md:flex items-center">
+<div class="flex w-full items-center border-[1.5px] border-outline-variant bg-surface-container-lowest rounded-lg focus-within:border-primary transition-colors duration-150">
+<button class="flex items-center gap-1 px-3 py-2 border-r border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors">
+<span>All</span>
+<span class="material-symbols-outlined text-[18px]">arrow_drop_down</span>
+</button>
+<input class="w-full px-3 py-2 text-body-md font-body-md bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-outline" placeholder="Search products, orders, brands, and Prime deals..." type="text"/>
+<button class="px-4 py-2 bg-primary text-on-primary hover:bg-on-surface transition-colors flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Actions -->
+<div class="flex items-center gap-5 shrink-0">
+<!-- Icon Actions from JSON: location_on, favorite, person -->
+<div class="flex items-center gap-3">
+<a class="flex items-center gap-1 text-on-surface-variant hover:text-secondary-container dark:hover:text-secondary-fixed-dim transition-colors duration-150 py-1" href="#" title="Delivery Location">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="hidden xl:inline text-label-sm font-label-sm">Deliver to 94107</span>
+</a>
+<a class="flex items-center gap-1 text-on-surface-variant hover:text-secondary-container dark:hover:text-secondary-fixed-dim transition-colors duration-150 py-1" href="#" title="Saved Wishlist">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</a>
+<a class="flex items-center gap-1 text-secondary-container font-label-md text-label-md py-1 border-b-2 border-secondary-container" href="#" title="Account &amp; Profile">
+<span class="material-symbols-outlined" data-icon="person" data-weight="fill">person</span>
+<span class="hidden lg:inline">Alex M.</span>
+</a>
+</div>
+<div class="h-5 w-[1px] bg-outline-variant hidden sm:block"></div>
+<!-- Trailing Secondary: Orders -->
+<a class="hidden sm:flex flex-col text-left hover:text-secondary-container dark:hover:text-secondary-fixed-dim transition-colors duration-150" href="#">
+<span class="text-label-sm font-label-sm text-on-surface-variant leading-none">Returns &amp;</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Orders</span>
+</a>
+<!-- Trailing Primary: Cart (3) -->
+<a class="flex items-center gap-2 px-3.5 py-2 bg-secondary-container text-on-primary rounded-lg font-label-md text-label-md hover:bg-secondary active:scale-[0.98] transition-all duration-150 shadow-sm" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-bold">Cart (3)</span>
+</a>
+</div>
+</div>
+<!-- Navigation Links Bar (Desktop) -->
+<nav class="bg-surface-container-low dark:bg-inverse-surface border-t border-outline-variant/60 hidden md:block">
+<div class="w-full px-4 md:px-8 max-w-[1440px] mx-auto flex items-center gap-6 overflow-x-auto py-2">
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md pb-1 hover:text-secondary-container dark:hover:text-secondary-fixed-dim transition-colors duration-150 shrink-0 flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[18px]">menu</span> All Categories
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md pb-1 hover:text-secondary-container dark:hover:text-secondary-fixed-dim transition-colors duration-150 shrink-0" href="#">
+          Trending Deals
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md pb-1 hover:text-secondary-container dark:hover:text-secondary-fixed-dim transition-colors duration-150 shrink-0" href="#">
+          New In
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md pb-1 hover:text-secondary-container dark:hover:text-secondary-fixed-dim transition-colors duration-150 shrink-0" href="#">
+          Tech
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md pb-1 hover:text-secondary-container dark:hover:text-secondary-fixed-dim transition-colors duration-150 shrink-0" href="#">
+          Men
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md pb-1 hover:text-secondary-container dark:hover:text-secondary-fixed-dim transition-colors duration-150 shrink-0" href="#">
+          Women
+        </a>
+<div class="ml-auto flex items-center gap-4 shrink-0 text-label-sm font-label-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary text-on-primary text-[10px] uppercase font-bold tracking-wider">
+            PRIME
+          </span>
+<span class="text-on-surface-variant">Same-Day Delivery: <strong class="text-on-surface">Order in 1h 42m</strong></span>
+</div>
+</div>
+</nav>
+</header>
+<!-- Main Body Content: Bento Grid & High-Density Dashboard -->
+<main class="w-full max-w-[1440px] mx-auto px-4 md:px-8 py-6 flex-1">
+<!-- Breadcrumb & Status Bar -->
+<div class="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-outline-variant/60">
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<a class="hover:text-on-surface transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-on-surface transition-colors" href="#">My Account</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Account Dashboard</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container text-on-surface-variant text-label-sm font-label-sm border border-outline-variant/50">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span>NEXUS UltraSync Active</span>
+</div>
+<span class="text-label-sm font-label-sm text-outline">Member since Nov 2021</span>
+</div>
+</div>
+<!-- Main Grid: Sidebar + Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Account Sidebar Navigation (Desktop Col 3) -->
+<aside class="lg:col-span-3 space-y-4">
+<!-- User Quick Profile Mini Card -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-xl p-4 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="relative w-12 h-12 rounded-full overflow-hidden border border-outline-variant bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="A refined and professional digital portrait of Alex Morgan, looking forward with approachable confidence in a bright modern studio setting. High-key light-mode lighting, crisp neutral background, soft diffused shadows, clean wardrobe in minimalist dark slate navy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZzPFrzBqDz9LUhiYPtaVWR3tgnYYJyCoZreJDtzSScbBshZgxDeYke2JRQfVWSPljxbHvVvOwv5qHxhifsYI1MqlhBgW7YFQ5bDiOzmia1Lkgye96unU1By8yNf1vGP7H-1Sbiiyf3rCqX7MXbybkjlTi_PgkhWoOdw7CZk2XMkIOSX4b9jSVMpo-Nwj1ZGI4VdgPo1c5Uct6Yp8MW9iOYo9CRxxGFUY7V92TI0Mw-uL2A7-jK9t92A"/>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h2 class="text-headline-sm font-headline-sm text-on-surface truncate">Alex Morgan</h2>
+<span class="material-symbols-outlined text-secondary-container text-[18px]" data-weight="fill" title="Verified Member">verified</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant truncate">alex.morgan@nexus.io</p>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-outline-variant/40 flex items-center justify-between text-label-sm font-label-sm">
+<span class="px-2 py-0.5 bg-primary text-on-primary rounded font-bold uppercase tracking-wider text-[10px]">
+              Prime Platinum
+            </span>
+<span class="text-secondary-container font-semibold">Tier 4 Global</span>
+</div>
+</div>
+<!-- Navigation Menu -->
+<nav class="bg-surface-container-lowest border border-outline-variant/80 rounded-xl overflow-hidden shadow-sm divide-y divide-outline-variant/40">
+<ul class="py-2 space-y-0.5">
+<!-- Overview / Dashboard (Active) -->
+<li>
+<a class="flex items-center justify-between px-4 py-2.5 bg-surface-container-low text-secondary-container font-label-md text-label-md border-l-4 border-secondary-container transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-weight="fill">dashboard</span>
+<span>Overview / Dashboard</span>
+</div>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</li>
+<!-- My Orders & Tracking -->
+<li>
+<a class="flex items-center justify-between px-4 py-2.5 text-on-surface hover:bg-surface-container-low hover:text-secondary-container font-label-md text-label-md border-l-4 border-transparent transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">local_shipping</span>
+<span>My Orders &amp; Tracking</span>
+</div>
+<span class="px-1.5 py-0.5 bg-secondary-container text-on-primary text-[10px] font-bold rounded-full">1 Active</span>
+</a>
+</li>
+<!-- NEXUS Prime Membership -->
+<li>
+<a class="flex items-center justify-between px-4 py-2.5 text-on-surface hover:bg-surface-container-low hover:text-secondary-container font-label-md text-label-md border-l-4 border-transparent transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">workspace_premium</span>
+<span>NEXUS Prime Membership</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+</a>
+</li>
+<!-- Saved Addresses & Payment Methods -->
+<li>
+<a class="flex items-center justify-between px-4 py-2.5 text-on-surface hover:bg-surface-container-low hover:text-secondary-container font-label-md text-label-md border-l-4 border-transparent transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">credit_card</span>
+<span>Saved Addresses &amp; Payment Methods</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+</a>
+</li>
+<!-- Wishlist & Saved for Later -->
+<li>
+<a class="flex items-center justify-between px-4 py-2.5 text-on-surface hover:bg-surface-container-low hover:text-secondary-container font-label-md text-label-md border-l-4 border-transparent transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">favorite_border</span>
+<span>Wishlist &amp; Saved for Later</span>
+</div>
+<span class="text-on-surface-variant text-label-sm font-label-sm">14 items</span>
+</a>
+</li>
+<!-- Security & Login -->
+<li>
+<a class="flex items-center justify-between px-4 py-2.5 text-on-surface hover:bg-surface-container-low hover:text-secondary-container font-label-md text-label-md border-l-4 border-transparent transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">security</span>
+<span>Security &amp; Login</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+</a>
+</li>
+<!-- Preferences -->
+<li>
+<a class="flex items-center justify-between px-4 py-2.5 text-on-surface hover:bg-surface-container-low hover:text-secondary-container font-label-md text-label-md border-l-4 border-transparent transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">tune</span>
+<span>Preferences</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+</a>
+</li>
+</ul>
+<!-- Sign Out Link -->
+<div class="p-3 bg-surface-container-lowest">
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3 text-on-surface-variant hover:text-error hover:bg-error-container/30 rounded-lg text-label-md font-label-md transition-colors">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span>Sign Out of NEXUS</span>
+</button>
+</div>
+</nav>
+<!-- Need Help Quick Card -->
+<div class="bg-surface-container p-4 rounded-xl border border-outline-variant/60">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-container">support_agent</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Priority Concierge</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">24/7 Dedicated Prime customer resolution &amp; instant replacements.</p>
+<a class="inline-flex items-center gap-1 text-label-sm font-label-sm text-secondary-container font-bold hover:underline mt-2" href="#">
+                Launch Live Chat <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Dashboard Canvas (Desktop Col 9) -->
+<section class="lg:col-span-9 space-y-6">
+<!-- Welcome Banner & Prime Status Hero -->
+<div class="relative overflow-hidden bg-primary-container text-on-primary rounded-xl p-6 md:p-8 border border-outline-variant shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="space-y-2 z-10">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 bg-secondary-container text-on-primary rounded font-label-sm text-label-sm uppercase font-bold tracking-wider">
+<span class="material-symbols-outlined text-[14px]">bolt</span> NEXUS Prime Active
+            </div>
+<h1 class="text-headline-lg font-headline-lg font-extrabold tracking-tight text-white">
+              Welcome back, Alex Morgan
+            </h1>
+<p class="text-on-primary-container text-body-md font-body-md max-w-xl">
+              Your NEXUS Prime membership is currently active through November 14, 2025. Enjoy guaranteed 1-day free delivery on millions of items.
+            </p>
+</div>
+<div class="flex flex-col sm:flex-row md:flex-col gap-2 shrink-0 z-10">
+<button class="px-5 py-2.5 bg-secondary-container hover:bg-secondary active:scale-[0.98] text-white font-label-md text-label-md rounded-lg font-bold transition-all shadow-md text-center">
+              Manage Membership
+            </button>
+<button class="px-5 py-2.5 bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 border border-white/20 text-white font-label-md text-label-md rounded-lg transition-all text-center">
+              View Prime Perks
+            </button>
+</div>
+<!-- Abstract Decorative Elements -->
+<div class="absolute -right-8 -bottom-8 w-64 h-64 bg-secondary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute right-32 top-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl pointer-events-none"></div>
+</div>
+<!-- Quick Statistics Metric Grid (3 Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<!-- Stat 1: Total Orders -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-xl p-4 shadow-sm flex items-center justify-between">
+<div>
+<p class="text-label-sm font-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Total Orders</p>
+<h3 class="text-price-hero font-price-hero text-on-surface mt-1">28</h3>
+<p class="text-body-sm font-body-sm text-emerald-600 font-medium flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> 4 this month
+              </p>
+</div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[24px]">inventory_2</span>
+</div>
+</div>
+<!-- Stat 2: Saved with Prime -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-xl p-4 shadow-sm flex items-center justify-between">
+<div>
+<p class="text-label-sm font-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Saved with Prime</p>
+<h3 class="text-price-hero font-price-hero text-secondary-container mt-1">$420.50</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Free shipping &amp; deals</p>
+</div>
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-secondary-container shrink-0">
+<span class="material-symbols-outlined text-[24px]" data-weight="fill">savings</span>
+</div>
+</div>
+<!-- Stat 3: Reward Points -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-xl p-4 shadow-sm flex items-center justify-between">
+<div>
+<p class="text-label-sm font-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Reward Points</p>
+<h3 class="text-price-hero font-price-hero text-on-surface mt-1">1,840</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Worth $18.40 credit</p>
+</div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[24px]">toll</span>
+</div>
+</div>
+</div>
+<!-- Active Order Tracking Widget (Live Stepper & Mini Map) -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-xl p-6 shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-outline-variant/50">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary-container animate-ping"></span>
+<h3 class="text-headline-md font-headline-md text-on-surface">Active Shipment in Transit</h3>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Order #NX-98421034</span>
+<a class="text-label-sm font-label-sm text-secondary-container font-bold hover:underline" href="#">View Receipt</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mt-6 items-center">
+<!-- Left: Stepper and Delivery Meta -->
+<div class="md:col-span-7 space-y-6">
+<div>
+<div class="flex items-baseline gap-2">
+<span class="text-label-sm font-label-sm uppercase font-bold text-secondary-container tracking-wider">Out for Delivery</span>
+<span class="text-headline-md font-headline-md font-extrabold text-on-surface">Arriving Today by 4:30 PM</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Carrier: NEXUS Direct Fleet (Driver #402 - Marcus)</p>
+</div>
+<!-- Status Stepper Component -->
+<div class="relative">
+<div class="absolute top-4 left-4 right-4 h-1 bg-surface-container-highest -z-0">
+<div class="h-full bg-secondary-container w-[75%] transition-all duration-500"></div>
+</div>
+<div class="relative z-10 flex justify-between">
+<!-- Step 1: Placed -->
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="text-label-sm font-label-sm font-bold text-on-surface mt-2">Ordered</span>
+<span class="text-[10px] text-on-surface-variant">Yesterday 9:15 AM</span>
+</div>
+<!-- Step 2: Packed -->
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="text-label-sm font-label-sm font-bold text-on-surface mt-2">Packed</span>
+<span class="text-[10px] text-on-surface-variant">Yesterday 11:40 PM</span>
+</div>
+<!-- Step 3: Out for Delivery (Active) -->
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-primary flex items-center justify-center ring-4 ring-secondary-fixed shadow-sm">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</div>
+<span class="text-label-sm font-label-sm font-bold text-secondary-container mt-2">Out for Delivery</span>
+<span class="text-[10px] text-on-surface-variant">Today 8:05 AM</span>
+</div>
+<!-- Step 4: Delivered -->
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface-container text-outline flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-[16px]">home</span>
+</div>
+<span class="text-label-sm font-label-sm font-medium text-outline mt-2">Delivered</span>
+<span class="text-[10px] text-outline">Est. 4:30 PM</span>
+</div>
+</div>
+</div>
+<!-- Product Item Summary in this Shipment -->
+<div class="flex items-center gap-4 p-3 bg-surface-container-low rounded-lg border border-outline-variant/50">
+<div class="w-14 h-14 rounded bg-surface-container-lowest border border-outline-variant shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Modern high-fidelity noise-cancelling wireless headphones in matte carbon black with metallic copper hinges, resting cleanly on a sleek studio surface. High-contrast e-commerce studio lighting with immaculate product reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_kwaiHnKqnXtdpS7_ope1zuxHhqqNSsV0ONS0x9CQaUatPbv3HRvdomvfdTwOMt1b7Ip0wxWX-9bIRiWS4Gg8belMStP8FJsiyYUAQ-6-NlC5pCPlgMXTGIHjYjz88FhAkYhW8sPhGhpB7SV_q3Q59Hmtcz_5wJtn3rgyFPgh6eihg11boKwJxAPuarf4PuSrtHB0fdhL4DMB58qzHgNCAUZxn06LG2bq_HjAWNtQe6NEvDi19Ukzeg"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">AeroSound Pro ANC Wireless Headphones</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Color: Carbon Black • Qty: 1</p>
+</div>
+<div class="text-right shrink-0">
+<span class="text-price-card font-price-card text-on-surface">$249.00</span>
+</div>
+</div>
+</div>
+<!-- Right: Live Mini Tracking Map Preview -->
+<div class="md:col-span-5 h-full">
+<div class="relative w-full h-56 rounded-lg overflow-hidden border border-outline-variant bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist vector-style city street map of San Francisco showing GPS navigational routes in bold contrast, highlighted with a vibrant orange delivery path and delivery van icon marker. Soft gray grid lines with crisp white arterial avenues." data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPh_JbGGfPCLgd35sk9GLB685b0y__oMFJIVketVO13WUsA8EPQG1ENFQlxmCu7AFokgKS7cDl5nRbtfo2E8aqcmL3-gRaX0gGhoxdf5Ww79jz1I20cM2eaqnP9csBghZa_UW_hlUSZ9YejLvpOHUi1SDpSSce_lGLq6b_qNfCYzfJN_5vy2IPYUE6cUfcr-LXRAn2otwjxV8oJA9S6QKGn2YFTyy5bAt3D3yNakuXK51N-w3Hh2O-SQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent flex flex-col justify-end p-3">
+<div class="bg-surface-container-lowest/95 backdrop-blur-sm p-2.5 rounded-lg border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">near_me</span>
+<div>
+<p class="text-label-sm font-label-sm font-bold text-on-surface">Driver is 4 stops away</p>
+<p class="text-[11px] text-on-surface-variant">Expected at your doorstep: ~25 mins</p>
+</div>
+</div>
+<button class="px-2.5 py-1 bg-primary text-on-primary text-label-sm font-label-sm rounded font-medium hover:bg-on-surface transition-colors">
+                      Live Map
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Orders Section -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-xl p-6 shadow-sm">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/50">
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface">Recent Orders</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Review order details, print invoices, or repurchase items with one click</p>
+</div>
+<a class="text-label-md font-label-md text-secondary-container font-bold hover:underline flex items-center gap-1" href="#">
+              View All 28 Orders <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Order Item 1 -->
+<div class="mt-4 border border-outline-variant rounded-lg overflow-hidden">
+<div class="bg-surface-container-low px-4 py-3 flex flex-wrap items-center justify-between gap-3 text-label-sm font-label-sm border-b border-outline-variant/60">
+<div class="flex flex-wrap items-center gap-6">
+<div>
+<span class="text-on-surface-variant block uppercase text-[10px]">Order Placed</span>
+<span class="font-bold text-on-surface">October 28, 2024</span>
+</div>
+<div>
+<span class="text-on-surface-variant block uppercase text-[10px]">Total</span>
+<span class="font-bold text-on-surface">$189.50</span>
+</div>
+<div>
+<span class="text-on-surface-variant block uppercase text-[10px]">Ship To</span>
+<span class="font-bold text-on-surface">Alex Morgan</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-on-surface-variant">Order #NX-88319283</span>
+<span class="text-outline">|</span>
+<a class="text-secondary-container hover:underline" href="#">Invoice</a>
+</div>
+</div>
+<div class="p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded border border-outline-variant overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Ergonomic mechanical wireless keyboard with low-profile mechanical switches and sleek anodized aluminum top frame. High-key light-mode presentation against an immaculate architectural background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtMP30IAbMNfF8uTyHX7m_AeXdZBs0PMrYgAXhUYW3jTCvTdPe4JX1rVdoPn4Ux8oUM7L2HIfiGN-KHplp9rdCg51t726Xusg2nkYIxi0-LIb8GlbzJ305O2Cuww8cdYB2U07-2VO4cHJGWHVmOFKKbRWsX1PCYoqW9FDH-7EFdV3JfIfSniEcWAOsZaQHlOR4xYC6H-TZaWyt-LZ2JEGltNY9FJ9md1GFIjXtHoJoj7jeHFULpkGOcA"/>
+</div>
+<div>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase mb-1">
+<span class="material-symbols-outlined text-[12px]">done_all</span> Delivered Oct 30
+                  </span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">KeyChron Pro Minimalist Mechanical Keyboard</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Return window closed on Nov 29, 2024</p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-4 py-2 border border-outline-variant text-on-surface bg-surface-container-lowest hover:bg-surface-container font-label-md text-label-md rounded-lg font-semibold transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">replay</span> Buy Again
+                </button>
+<button class="flex-1 sm:flex-none px-4 py-2 bg-primary text-on-primary hover:bg-on-surface font-label-md text-label-md rounded-lg font-semibold transition-colors">
+                  View Order
+                </button>
+</div>
+</div>
+</div>
+<!-- Order Item 2 -->
+<div class="mt-4 border border-outline-variant rounded-lg overflow-hidden">
+<div class="bg-surface-container-low px-4 py-3 flex flex-wrap items-center justify-between gap-3 text-label-sm font-label-sm border-b border-outline-variant/60">
+<div class="flex flex-wrap items-center gap-6">
+<div>
+<span class="text-on-surface-variant block uppercase text-[10px]">Order Placed</span>
+<span class="font-bold text-on-surface">October 14, 2024</span>
+</div>
+<div>
+<span class="text-on-surface-variant block uppercase text-[10px]">Total</span>
+<span class="font-bold text-on-surface">$74.20</span>
+</div>
+<div>
+<span class="text-on-surface-variant block uppercase text-[10px]">Ship To</span>
+<span class="font-bold text-on-surface">Alex Morgan</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-on-surface-variant">Order #NX-77192801</span>
+<span class="text-outline">|</span>
+<a class="text-secondary-container hover:underline" href="#">Invoice</a>
+</div>
+</div>
+<div class="p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded border border-outline-variant overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Matte ceramic pour-over coffee dripper and double-walled insulated glass server carafe, styled cleanly on light gray oak kitchen counter with sunlight highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3v2Ou4jvfJd6abTNnqM5CfTngL2AKqEH--9ioDI58SH9ml36Easy5qGjEzBaa5w-eG6WN10xBUM1_MDiQkbsA6ivzjRmRae6ywXaFXYgSwc_tdAB10RTmHLPQfo9XdEH-dBCUJyVeCWWW4n4-jgIlulZLkGCkzzQKelMtcmxBJSgECYMZie83zf74NyWRpsvxyD1la3CNO7zsL_nPi8WxBZCOfVCnp-Keurlex80eXKOpceClgypMRw"/>
+</div>
+<div>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase mb-1">
+<span class="material-symbols-outlined text-[12px]">done_all</span> Delivered Oct 15
+                  </span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Artisan Ceramic Coffee Maker Set</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Item eligible for warranty support</p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-4 py-2 border border-outline-variant text-on-surface bg-surface-container-lowest hover:bg-surface-container font-label-md text-label-md rounded-lg font-semibold transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">replay</span> Buy Again
+                </button>
+<button class="flex-1 sm:flex-none px-4 py-2 bg-primary text-on-primary hover:bg-on-surface font-label-md text-label-md rounded-lg font-semibold transition-colors">
+                  View Order
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- 2-Column Row: Default Shipping Address & Saved Payment Card Preview -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Default Shipping Address -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-xl p-5 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container">home_pin</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Default Shipping Address</h3>
+</div>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant rounded text-[10px] font-bold uppercase">Primary</span>
+</div>
+<div class="mt-4 space-y-1">
+<p class="font-bold text-on-surface">Alex Morgan</p>
+<p class="text-body-md font-body-md text-on-surface-variant">548 Market Street, Suite 32901</p>
+<p class="text-body-md font-body-md text-on-surface-variant">San Francisco, CA 94104</p>
+<p class="text-body-md font-body-md text-on-surface-variant">United States</p>
+<p class="text-body-sm font-body-sm text-outline mt-2">Delivery Instructions: Ring bell 402 or leave in secure locker.</p>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-outline-variant/40 flex items-center justify-between">
+<a class="text-label-sm font-label-sm text-secondary-container font-bold hover:underline" href="#">Edit Address</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-on-surface" href="#">Manage All (3)</a>
+</div>
+</div>
+<!-- Saved Payment Card Preview -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-xl p-5 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container">credit_card</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Default Payment Method</h3>
+</div>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant rounded text-[10px] font-bold uppercase">Primary</span>
+</div>
+<!-- Credit Card Visual -->
+<div class="mt-4 p-4 rounded-xl bg-gradient-to-tr from-primary-container via-inverse-surface to-primary text-white shadow-md relative overflow-hidden">
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-sm font-label-sm font-mono tracking-widest text-on-primary-container">NEXUS PRIME REWARDS</span>
+<span class="font-display-hero text-headline-sm italic font-extrabold tracking-wider">VISA</span>
+</div>
+<p class="font-mono text-body-lg font-body-lg tracking-widest my-2">•••• •••• •••• 9012</p>
+<div class="flex justify-between items-end mt-4 text-[11px] text-on-primary-container">
+<div>
+<span class="block text-[9px] uppercase tracking-wider">Cardholder</span>
+<span class="font-semibold text-white uppercase">Alex Morgan</span>
+</div>
+<div>
+<span class="block text-[9px] uppercase tracking-wider">Expires</span>
+<span class="font-semibold text-white">09/28</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-outline-variant/40 flex items-center justify-between">
+<a class="text-label-sm font-label-sm text-secondary-container font-bold hover:underline" href="#">Edit Payment</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-on-surface" href="#">Manage All (2)</a>
+</div>
+</div>
+</div>
+<!-- Recommended Items Based on Recent Activity (Product Grid) -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-xl p-6 shadow-sm">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/50">
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface">Recommended For You</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Curated matching additions to your tech and home workspace setup</p>
+</div>
+<a class="text-label-md font-label-md text-secondary-container font-bold hover:underline" href="#">View More</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+<!-- Product Card 1 -->
+<div class="border border-outline-variant rounded-lg p-3 hover:border-outline hover:shadow-md transition-all duration-150 flex flex-col justify-between group">
+<div>
+<div class="relative w-full aspect-square rounded overflow-hidden bg-surface-container mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Minimalist aluminum dual-monitor desk mount arm in anodized space gray, perfectly aligned against a bright clean architectural wall with ambient natural sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-p23Z8H2eBDxiWz0PGFob77gGuCSLhciOLomw8lP_vcF_nZhQAmtjAT0_0_lfUdBwA4PYFoHCEbDeRakTRc6vpSjIXXS9o5lZHxYeB80ggYg2KCsP-lwPIPjWtIXoBgSXMH3TlfGYbyycPSci5izO4jHrl-WMFIOnY2jCtnPymUJgUhJ_RveerbX05ePE70KoPfhZ3jMuwdMJFQluzWpGpUd0fKB3sIjz6Upup6yAKy3YpI7PiMs0lQ"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 bg-secondary-container text-on-primary font-label-sm text-[10px] font-bold rounded uppercase">
+                    Save 20%
+                  </span>
+<button class="absolute top-2 right-2 w-7 h-7 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">ErgoTech Gear</p>
+<h4 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 mt-0.5">Heavy-Duty Dual Gas-Spring Monitor Desk Mount</h4>
+<!-- Ratings -->
+<div class="flex items-center gap-1 mt-1.5">
+<div class="flex text-amber-500 text-[14px]">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]">star_half</span>
+</div>
+<span class="text-body-sm font-body-sm text-outline">(1,420)</span>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-outline-variant/40 flex items-center justify-between">
+<div>
+<div class="flex items-baseline gap-1.5">
+<span class="text-price-card font-price-card text-secondary-container">$79.99</span>
+<span class="text-price-strikethrough font-price-strikethrough text-outline line-through">$99.99</span>
+</div>
+<span class="text-[10px] text-emerald-600 font-bold">Prime One-Day</span>
+</div>
+<button class="px-3 py-1.5 bg-secondary-container hover:bg-secondary text-white font-label-sm text-label-sm rounded font-bold transition-colors">
+                  Add to Cart
+                </button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="border border-outline-variant rounded-lg p-3 hover:border-outline hover:shadow-md transition-all duration-150 flex flex-col justify-between group">
+<div>
+<div class="relative w-full aspect-square rounded overflow-hidden bg-surface-container mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Architectural aluminum LED desk lamp with touch slider and gentle ambient warm glow, illuminating a pristine clean workspace table with high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGSoeIQGVsr9STZIxkPxLqxSBnxi8JZK-MT4IOHkJolrlnSHvRb_0dJZQ79seRcGmTLXyTJGmXZC-I1TUcDITLBqBWusZuhn1-YbXnV-03NgcpJyhg3Fe5LNIKAblFV8s3C8derZ6qkGr0Zfv5uJYoQdHuP-_7VyZuJ1zm3-wF6lOKFRLSHiIc5lE6hvAs-TqdTBYRdNQe6e1VkXS8o7EG_M6gIbi8beEnF5TeSO_qEIgYX_6C3Vst0A"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 bg-primary text-on-primary font-label-sm text-[10px] font-bold rounded uppercase">
+                    Best Seller
+                  </span>
+<button class="absolute top-2 right-2 w-7 h-7 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Lumina Design</p>
+<h4 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 mt-0.5">Linear ScreenBar Monitor Eye-Care Light Lamp</h4>
+<!-- Ratings -->
+<div class="flex items-center gap-1 mt-1.5">
+<div class="flex text-amber-500 text-[14px]">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">star</span>
+</div>
+<span class="text-body-sm font-body-sm text-outline">(890)</span>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-outline-variant/40 flex items-center justify-between">
+<div>
+<div class="flex items-baseline gap-1.5">
+<span class="text-price-card font-price-card text-on-surface">$54.00</span>
+</div>
+<span class="text-[10px] text-emerald-600 font-bold">Prime Same-Day</span>
+</div>
+<button class="px-3 py-1.5 bg-secondary-container hover:bg-secondary text-white font-label-sm text-label-sm rounded font-bold transition-colors">
+                  Add to Cart
+                </button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="border border-outline-variant rounded-lg p-3 hover:border-outline hover:shadow-md transition-all duration-150 flex flex-col justify-between group">
+<div>
+<div class="relative w-full aspect-square rounded overflow-hidden bg-surface-container mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Premium vegan leather extended desk pad mat in charcoal slate gray, detailed stitching along bevel borders, smooth clean studio product photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3GjbBHnSjJx2L0S5Hj4BC7JVnETE2-cghLeXS4UheJXvWqpTQLebRYKYZTLa93tCLkgaYBKw0vEhyeOdlQyUj0XGNr8rRemsNnXymVmHuPNMDTZ7uC4bZFjv1teVqNW3JURfqgWS_nmxMyC9SrZqU_U0OEpVMxfBM035Jx19PIP6wrcYjRaUHHoGX9VQavWZ8aeF_RwN0_5h9eLbRJBYAOC00ue2iqrddZvGxrEv72IfHEJOtwMiCsg"/>
+<button class="absolute top-2 right-2 w-7 h-7 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Nexus Essentials</p>
+<h4 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 mt-0.5">Water-Resistant Premium Vegan Leather Desk Mat</h4>
+<!-- Ratings -->
+<div class="flex items-center gap-1 mt-1.5">
+<div class="flex text-amber-500 text-[14px]">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+</div>
+<span class="text-body-sm font-body-sm text-outline">(3,240)</span>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-outline-variant/40 flex items-center justify-between">
+<div>
+<div class="flex items-baseline gap-1.5">
+<span class="text-price-card font-price-card text-on-surface">$24.50</span>
+<span class="text-price-strikethrough font-price-strikethrough text-outline line-through">$29.99</span>
+</div>
+<span class="text-[10px] text-emerald-600 font-bold">Prime One-Day</span>
+</div>
+<button class="px-3 py-1.5 bg-secondary-container hover:bg-secondary text-white font-label-sm text-label-sm rounded font-bold transition-colors">
+                  Add to Cart
+                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer (Shared Component from JSON) -->
+<footer class="w-full bg-primary-container dark:bg-primary-container border-t border-outline-variant dark:border-outline mt-16 text-primary-fixed dark:text-primary-fixed">
+<div class="w-full px-4 md:px-8 max-w-[1440px] mx-auto py-12 flex flex-col gap-8">
+<!-- Top Brand & Links Cluster -->
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-outline-variant/30">
+<div>
+<span class="text-headline-md font-headline-md font-extrabold text-primary-fixed dark:text-primary-fixed tracking-tight uppercase">
+            NEXUS Market
+          </span>
+<p class="text-body-sm font-body-sm text-on-primary-container dark:text-on-primary-container mt-1">
+            © 2024 NEXUS Market Inc. All rights reserved. Ultra-fast global fulfillment.
+          </p>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-label-sm font-label-sm text-on-primary-container">Language: <strong>English (US)</strong></span>
+<span class="text-outline">|</span>
+<span class="text-label-sm font-label-sm text-on-primary-container">Currency: <strong>USD ($)</strong></span>
+</div>
+</div>
+<!-- Links Grid from JSON: ["About Us", "Sell on Nexus", "Help Center", "Buyer Protection", "Terms of Service", "Privacy Policy"] -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-label-sm font-label-sm">
+<a class="text-on-primary-container dark:text-on-primary-container hover:text-tertiary-fixed-dim transition-colors duration-150" href="#">
+          About Us
+        </a>
+<a class="text-on-primary-container dark:text-on-primary-container hover:text-tertiary-fixed-dim transition-colors duration-150" href="#">
+          Sell on Nexus
+        </a>
+<a class="text-on-primary-container dark:text-on-primary-container hover:text-tertiary-fixed-dim transition-colors duration-150" href="#">
+          Help Center
+        </a>
+<a class="text-on-primary-container dark:text-on-primary-container hover:text-tertiary-fixed-dim transition-colors duration-150" href="#">
+          Buyer Protection
+        </a>
+<a class="text-on-primary-container dark:text-on-primary-container hover:text-tertiary-fixed-dim transition-colors duration-150" href="#">
+          Terms of Service
+        </a>
+<a class="text-on-primary-container dark:text-on-primary-container hover:text-tertiary-fixed-dim transition-colors duration-150" href="#">
+          Privacy Policy
+        </a>
+</div>
+<!-- Fulfillment Assurance Bottom -->
+<div class="flex flex-wrap items-center justify-between text-body-sm font-body-sm text-on-primary-container pt-4 text-xs">
+<div class="flex items-center gap-6">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary-container">verified_user</span> 256-Bit SSL Encrypted Checkout
+          </span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary-container">local_shipping</span> 99.8% On-Time Delivery Guarantee
+          </span>
+</div>
+<p class="text-[11px] text-on-primary-container/80 mt-2 md:mt-0">
+          NEXUS Prime is a registered trademark of NEXUS Market Inc.
+        </p>
+</div>
+</div>
+</footer>
+</body></html>

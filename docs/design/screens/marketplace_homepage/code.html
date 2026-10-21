@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXUS Market - Ultra-Fast Global Fulfillment</title>
+<!-- Google Fonts: Inter & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with forms & container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim as mandated -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface-variant": "#45464d",
+            "tertiary": "#000000",
+            "tertiary-fixed": "#ffddb8",
+            "on-primary-container": "#7c839b",
+            "on-secondary-fixed": "#3d0600",
+            "on-secondary-container": "#570c00",
+            "on-secondary-fixed-variant": "#8c1900",
+            "inverse-surface": "#213145",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#eaf1ff",
+            "tertiary-fixed-dim": "#ffb95f",
+            "secondary-container": "#fd5835",
+            "on-primary-fixed-variant": "#3f465c",
+            "primary-fixed-dim": "#bec6e0",
+            "primary-fixed": "#dae2fd",
+            "on-background": "#0b1c30",
+            "secondary-fixed": "#ffdad2",
+            "surface-container-highest": "#d3e4fe",
+            "surface-variant": "#d3e4fe",
+            "surface-container": "#e5eeff",
+            "background": "#f8f9ff",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#2a1700",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#eff4ff",
+            "primary-container": "#131b2e",
+            "on-surface": "#0b1c30",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#653e00",
+            "outline-variant": "#c6c6cd",
+            "on-primary": "#ffffff",
+            "secondary-fixed-dim": "#ffb4a3",
+            "on-primary-fixed": "#131b2e",
+            "inverse-primary": "#bec6e0",
+            "surface-container-high": "#dce9ff",
+            "secondary": "#b52603",
+            "primary": "#000000",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "outline": "#76777d",
+            "surface-bright": "#f8f9ff",
+            "tertiary-container": "#2a1700",
+            "on-tertiary-container": "#b87500",
+            "surface-dim": "#cbdbf5",
+            "surface-tint": "#565e74",
+            "surface": "#f8f9ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin": "2rem",
+            "margin-mobile": "1rem",
+            "gutter": "1rem",
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.25rem",
+            "gutter-mobile": "0.5rem",
+            "space-md": "0.75rem"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "price-hero": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "price-strikethrough": ["Inter"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "price-card": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-hero": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "price-hero": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "price-strikethrough": ["13px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-sm": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "price-card": ["18px", { "lineHeight": "22px", "letterSpacing": "-0.015em", "fontWeight": "800" }],
+            "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-lg": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-secondary-container selection:text-surface-container-lowest">
+<!-- ================= TOP APP BAR (SHARED COMPONENT) ================= -->
+<header class="sticky top-0 z-50 bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none">
+<!-- Top Utility & Search Tier -->
+<div class="w-full px-4 md:px-8 max-w-[1440px] mx-auto flex items-center justify-between gap-4 py-3">
+<!-- Brand Logo & Delivery Context -->
+<div class="flex items-center gap-6 shrink-0">
+<a class="text-headline-lg font-headline-lg font-extrabold text-on-surface dark:text-inverse-on-surface tracking-tight uppercase hover:text-secondary-container dark:hover:text-secondary-fixed-dim transition-colors duration-150" href="#">
+          NEXUS Market
+        </a>
+<div class="hidden xl:flex items-center gap-1.5 text-on-surface-variant dark:text-surface-variant hover:text-on-surface cursor-pointer">
+<span class="material-symbols-outlined text-[20px]" data-icon="location_on">location_on</span>
+<div class="flex flex-col leading-tight">
+<span class="font-label-sm text-label-sm text-outline">Deliver to</span>
+<span class="font-label-md text-label-md text-on-surface dark:text-inverse-on-surface">New York 10001</span>
+</div>
+</div>
+</div>
+<!-- Integrated Precision Search Bar with Category Dropdown -->
+<div class="flex-1 max-w-2xl relative hidden md:block">
+<div class="flex items-center border-[1.5px] border-outline-variant hover:border-outline focus-within:border-primary rounded-lg bg-surface-container-lowest transition-colors h-[44px]">
+<!-- Nested Category Select -->
+<div class="relative flex items-center pl-3 pr-2 border-r border-outline-variant h-full bg-surface-container-low rounded-l-lg">
+<select class="bg-transparent font-label-md text-label-md text-on-surface cursor-pointer focus:outline-none pr-4 border-none">
+<option>All</option>
+<option>Tech &amp; Gadgets</option>
+<option>Streetwear</option>
+<option>Footwear</option>
+<option>Prime Express</option>
+</select>
+</div>
+<!-- Input -->
+<div class="flex-1 flex items-center px-3 gap-2">
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="search">search</span>
+<input class="w-full bg-transparent border-none text-on-surface placeholder:text-outline text-body-md font-body-md focus:ring-0 focus:outline-none p-0" placeholder="Search brands, styles, instant deals..." type="text"/>
+</div>
+<!-- Search Submit Button -->
+<button class="h-full px-5 bg-primary-container text-primary-fixed hover:bg-primary transition-colors flex items-center justify-center rounded-r-lg" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Trailing Action Badges & Hubs -->
+<div class="flex items-center gap-3 lg:gap-5 shrink-0">
+<!-- Wishlist -->
+<a class="flex items-center gap-1.5 text-on-surface-variant dark:text-surface-variant hover:text-secondary-container dark:hover:text-secondary-fixed-dim transition-colors duration-150 py-1" href="#wishlist">
+<span class="material-symbols-outlined text-[22px]" data-icon="favorite">favorite</span>
+<span class="hidden lg:inline font-label-md text-label-md">Wishlist</span>
+</a>
+<!-- Orders -->
+<a class="flex items-center gap-1.5 text-on-surface-variant dark:text-surface-variant hover:text-secondary-container dark:hover:text-secondary-fixed-dim transition-colors duration-150 py-1" href="#orders">
+<span class="material-symbols-outlined text-[22px]" data-icon="person">person</span>
+<div class="flex flex-col text-left leading-tight hidden lg:flex">
+<span class="font-label-sm text-label-sm text-outline">Track</span>
+<span class="font-label-md text-label-md text-on-surface dark:text-inverse-on-surface">Orders</span>
+</div>
+</a>
+<!-- Cart Primary Trailing Action -->
+<a class="flex items-center gap-2 bg-secondary-container hover:bg-secondary text-surface-container-lowest px-4 py-2 rounded-lg font-label-md text-label-md active:scale-95 transition-all duration-150 shadow-sm" href="#cart">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_bag">shopping_bag</span>
+<span>Cart (3)</span>
+</a>
+</div>
+</div>
+<!-- Secondary Category Navigation Strip (From JSON navigation_links) -->
+<div class="border-t border-outline-variant dark:border-outline bg-surface-container-lowest">
+<div class="w-full px-4 md:px-8 max-w-[1440px] mx-auto flex items-center gap-6 overflow-x-auto py-2 text-label-md font-label-md">
+<!-- All Categories (Active Intent Example) -->
+<a class="border-b-2 border-secondary-container text-on-surface dark:text-inverse-on-surface font-label-md text-label-md pb-1 shrink-0 flex items-center gap-1" href="#categories">
+<span class="material-symbols-outlined text-[18px]" data-icon="menu">menu</span>
+          All Categories
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md pb-1 shrink-0 hover:text-secondary-container transition-colors flex items-center gap-1" href="#trending">
+<span class="material-symbols-outlined text-secondary-container text-[18px]" data-icon="bolt">bolt</span>
+          Trending Deals
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md pb-1 shrink-0 hover:text-secondary-container transition-colors" href="#new-in">
+          New In
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md pb-1 shrink-0 hover:text-secondary-container transition-colors" href="#tech">
+          Tech
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md pb-1 shrink-0 hover:text-secondary-container transition-colors" href="#men">
+          Men
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md pb-1 shrink-0 hover:text-secondary-container transition-colors" href="#women">
+          Women
+        </a>
+<span class="h-4 w-[1px] bg-outline-variant shrink-0"></span>
+<a class="text-secondary-container font-label-md text-label-md pb-1 shrink-0 flex items-center gap-1 hover:underline" href="#nexus-prime">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified">verified</span>
+          Nexus Prime
+        </a>
+</div>
+</div>
+</header>
+<!-- ================= MAIN CONTENT ================= -->
+<main class="flex-1 w-full max-w-[1440px] mx-auto px-4 md:px-8 py-6 flex flex-col gap-8">
+<!-- 1. DYNAMIC HERO CAROUSEL / EDITORIAL BANNER -->
+<section class="relative rounded-xl overflow-hidden bg-primary-container text-surface-container-lowest border border-outline-variant min-h-[420px] flex items-center shadow-sm">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-45 mix-blend-luminosity" data-alt="A cinematic widescreen commercial composition showing futuristic tech accessories and avant-garde streetwear fashion. The lighting is dynamic with high-contrast architectural spotlighting against a clean deep navy backdrop. A stylish model stands next to floating sleek audio gadgets, capturing a hyper-modern urban aesthetic. The tone is editorial, clean, and decisively commercial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpyXX-KXo4foKlGQAyQKnEFfDj-BL_98pJmjRdBXG38VhyKIICKS_lSiADSf8OgoUdu1nHvHdEkditMgn80RH9j1eJvWLA8xNth71RKStgQKWfnZjoHt3miOuk0GQesO8LUi8aG8FnD7kQ9TIQOET77i6emKzrozHpH1pf1oqXwLWaH3D8MceasFriJkzPUya6zMVCysFfOH-mra4hxx9PXS9vOREoOaYfzZS8GjFope7zN2hX-3eNdg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container via-primary-container/85 to-transparent"></div>
+</div>
+<div class="relative z-10 p-6 md:p-12 max-w-2xl flex flex-col gap-4">
+<!-- Live Alert Badge & Flash Sale Countdown -->
+<div class="flex items-center gap-3">
+<span class="bg-secondary-container text-surface-container-lowest font-label-sm text-label-sm px-2.5 py-1 rounded-full uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="local_fire_department">local_fire_department</span>
+            Lightning Drop
+          </span>
+<div class="flex items-center gap-1 text-primary-fixed font-label-sm text-label-sm bg-primary/40 px-2.5 py-1 rounded-full backdrop-blur-sm border border-primary-fixed-dim/20">
+<span>Ends in:</span>
+<span class="font-headline-sm text-headline-sm text-secondary-fixed">04:38:19</span>
+</div>
+</div>
+<h1 class="text-display-hero font-display-hero tracking-tight leading-none text-surface-container-lowest">
+          Global Tech &amp; Summer Style Drop
+        </h1>
+<p class="text-primary-fixed-dim font-body-lg text-body-lg max-w-lg">
+          Up to 50% off headline designer gear, ultra-portable workstation gear, and tactile minimalist street curations. Next-day delivery unlocked.
+        </p>
+<!-- CTA Cluster -->
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<a class="bg-secondary-container hover:bg-secondary text-surface-container-lowest px-6 py-3 rounded-lg font-label-md text-label-md flex items-center gap-2 active:scale-95 transition-all shadow-md" href="#deals">
+<span>Shop Deals</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<a class="bg-surface-container-lowest text-primary hover:bg-surface-container px-6 py-3 rounded-lg font-label-md text-label-md flex items-center gap-2 border border-outline-variant transition-colors" href="#editorial">
+<span>Explore Curated</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="auto_awesome">auto_awesome</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 2. QUICK CATEGORY PILLS (High-Scan Grid) -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-headline-md font-headline-md text-on-surface">Explore Curated Departments</h2>
+<a class="text-secondary-container hover:underline font-label-md text-label-md flex items-center gap-1" href="#all-departments">
+<span>Browse 40+ departments</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+<!-- Audio -->
+<a class="group bg-surface-container-lowest border border-outline-variant hover:border-outline rounded-lg p-3 flex flex-col items-center text-center transition-all hover:-translate-y-0.5 shadow-sm" href="#audio">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-2 bg-surface-container flex items-center justify-center border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="High-end studio grade wireless noise cancelling headphones rendered on a minimal neutral grey pedestal with crisp rim lighting and high contrast styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbfl9YLRDoFa7IohqiNi3vnFDZAwPf5_BBg8spLFZoTlny3aENoVaPufmf-mwbsKrDKxz6do8jIiJy0cLNk4Wdpcf38ava3kPSqjOHWkYKqyQe760z7v_dkJikPDfJYiVLfuQIwKSPwTlLp6ZDSzT-nJ28vjVkdF0Ps3qdbcrsDZSYPZo0axm3LULhPTgDTEzB2t6fhEkq5fIiJFuR_XKr_bRNML-PehSZ4nhNhGew30QRXC3aMkZ1LA"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-secondary-container">Audio</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2,410+ SKUs</span>
+</a>
+<!-- Smart Wearables -->
+<a class="group bg-surface-container-lowest border border-outline-variant hover:border-outline rounded-lg p-3 flex flex-col items-center text-center transition-all hover:-translate-y-0.5 shadow-sm" href="#wearables">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-2 bg-surface-container flex items-center justify-center border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Ultra titanium smart fitness watch with dark tactical strap resting on concrete tile under bright sunlight showing health telemetry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAswOk9znESVM-wFktnv108puulg3CsQuqkCJ0h8GXuNNkmMhAUIS3fIm3c_Jswi1RqSN6Vr883hZnbhbY-PPT08Pg1hxTXTanh7reRv4Hf_H4Nux3k5wrxhaTXMxqyteg-2EBcakfcViRspw2YfPAa2clvrS9vv1-irEMKP42lLZfN1Er9I01ffUnVmnyiLniSe4qR3RtkA0qxUXMQjvwHG9sDZxLxROV80f2xBEmt1eB_m0Kz_ClR7g"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-secondary-container">Wearables</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">880+ Models</span>
+</a>
+<!-- Sneakers -->
+<a class="group bg-surface-container-lowest border border-outline-variant hover:border-outline rounded-lg p-3 flex flex-col items-center text-center transition-all hover:-translate-y-0.5 shadow-sm" href="#sneakers">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-2 bg-surface-container flex items-center justify-center border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Futuristic monochrome lifestyle designer sneaker with sculpted soles floating cleanly against a sterile studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVG5oqe8ZRNQj4FxIBW7VtNFns0a-vv-rC-zbSwGlwGXi43kRfDYssmwuUpsb2i580L_V1fZMsMxnWhIsGvtp-sH4Yv70fhdtfpem37kA2MCS3im76loalwYh3M0jjxN8UYxlVLYiPK8Rendne2M_9i28LkcKsAFNSAihl1VK7eFkEnIX8wMlX91rwh6_WSOOZDW-vGWL48Udv5nCAqp4YWHABXt9tFp0L68W5QgpYnnN1WLFtIFmryw"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-secondary-container">Sneakers</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Daily Drops</span>
+</a>
+<!-- Streetwear -->
+<a class="group bg-surface-container-lowest border border-outline-variant hover:border-outline rounded-lg p-3 flex flex-col items-center text-center transition-all hover:-translate-y-0.5 shadow-sm" href="#streetwear">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-2 bg-surface-container flex items-center justify-center border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Heavyweight oversized luxury box-cut cotton hoodie folded precisely over a minimal steel shelf in a fashion boutique." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEuhdGn1gnWpahm_WQFsHpkSWT3pFpTAFqFPeGd0lmt1X0q4lit2yr5PFL6VGdJ5x1DwMZS1p9wKUO6g1vDggc2xh9I5LK7Oh_n7MJ__6EjQ68e-m8VyE0FrVjd40ECJwexNWgQzUQjVKRDses2pMcnW8bofHv2Cq-NeSsK4cCL2yJT3BY1P-D0_1THytwsSC9dqKFMNabSgEOmaam-oiCAPTMyZWX9qUDV1Z8dwya0lrwhEC9Ya_H-g"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-secondary-container">Streetwear</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">ASOS Curated</span>
+</a>
+<!-- Gaming -->
+<a class="group bg-surface-container-lowest border border-outline-variant hover:border-outline rounded-lg p-3 flex flex-col items-center text-center transition-all hover:-translate-y-0.5 shadow-sm" href="#gaming">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-2 bg-surface-container flex items-center justify-center border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Ergonomic matte carbon custom pro wireless gaming controller with amber LED status backlight on sleek acrylic surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNSwKCzkCRVCo3zSOBPtXx_PEWlLJZjCOexSFLFajm7WlBtQWcYKryo3LWg6H7OVZWY9trtSqnpJy9psML0aCKxhky64tA7enbyPogg5L09FW6N1g6pRFW9r7dOOOgiGHXnNlwXsh4FOzT7Imn7kydjmuPSavkp2f3B3ywx-IOQYAbdMSkucxg0ugGrvkJk6HSQnKksXdFAQuIapyWpTzAvu55z4oykcXFGtS41kfz5mUJ719ChK_VPg"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-secondary-container">Gaming</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Next-Gen Gear</span>
+</a>
+<!-- Home Decor -->
+<a class="group bg-surface-container-lowest border border-outline-variant hover:border-outline rounded-lg p-3 flex flex-col items-center text-center transition-all hover:-translate-y-0.5 shadow-sm" href="#homedecor">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-2 bg-surface-container flex items-center justify-center border border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Brutalist architectural ceramic desk lamp illuminating an architect's modern wooden workspace table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWtCAzcKPHTVa3LsVbSptaLUBifLr55zY9UzIwTK9h7CLY1BNz6P9eu2xrGkac8sE-tKZmapVOx1kpdvcUG8pDs8HrwLlNmY98oY63QzFAZJNa_kDkQHW5KPMshSE8lQoE2TtvJF9ETJF0K39vBZZxyBVm2rL4O0mICGTobwRZ1YDc03zX5PPF1KfR-wh-1FxpORwtyigj81fJKsXBzn7_YclULbcM7CmiULDBuFJBvLBBGTe6wL7IxA"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-secondary-container">Home Decor</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Modern Living</span>
+</a>
+</div>
+</section>
+<!-- 3. FLASH SALES & LIGHTNING DEALS (High-Conversion Density Strip) -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-outline-variant mb-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-secondary-container flex items-center justify-center text-surface-container-lowest">
+<span class="material-symbols-outlined text-[20px]" data-icon="bolt">bolt</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="text-headline-md font-headline-md text-on-surface">Lightning Deals</h2>
+<span class="bg-error-container text-on-error-container font-label-sm text-label-sm px-2 py-0.5 rounded-full uppercase">Fast Selling</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Handpicked price drops reserved for Prime &amp; Fast-Track members</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-start sm:self-auto">
+<span class="font-label-sm text-label-sm text-outline">Fresh deals expire in:</span>
+<div class="flex gap-1 font-headline-sm text-headline-sm text-surface-container-lowest">
+<span class="bg-primary-container px-2 py-0.5 rounded text-surface-container-lowest">01</span>:
+            <span class="bg-primary-container px-2 py-0.5 rounded text-surface-container-lowest">28</span>:
+            <span class="bg-primary-container px-2 py-0.5 rounded text-surface-container-lowest">45</span>
+</div>
+</div>
+</div>
+<!-- 4-Column SKU Deal Matrix -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Deal Item 1 -->
+<div class="border border-outline-variant hover:border-outline rounded-lg p-3 bg-surface flex flex-col justify-between transition-all hover:shadow-md relative group">
+<div class="relative w-full aspect-square bg-surface-container-lowest rounded overflow-hidden mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Sleek matte black mechanical tenkeyless gaming keyboard with custom PBT keycaps and warm white underglow backlight on dark slate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo2Bjmr1vr1MnK3cW6liuWjQwcWQ02YFYyFFlF7q4QPxDx4bM5aIx0OdIstIyQizyUK74LKwG5T3vTX7yu-XTXAfKyBHIhoRQpRKBU8489bnbc6oi0c-P7wfHFBHd4eb4ocJ4x-Z3-7Le-nmEWxgcuwKe7YhaZtubvcxbXBwt3rN48Tnvh8wYPK-ahL16C07CJV9WObX8igK2nsJfmbC7053sclTF1sC2eCCLDd_z7Y4PItd7iiEwuQw"/>
+<span class="absolute top-2 left-2 bg-secondary-container text-surface-container-lowest font-label-sm text-label-sm px-1.5 py-0.5 rounded uppercase">-42% OFF</span>
+<button class="absolute top-2 right-2 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-sm flex items-center justify-center text-outline hover:text-secondary transition-colors" title="Wishlist">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="text-outline font-label-sm text-label-sm uppercase">KRONOS TECH</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 leading-snug">
+              Pro TKL Wireless Mechanical Keyboard - Tactile Brown Switches
+            </h3>
+<!-- Rating -->
+<div class="flex items-center gap-1.5 mt-0.5">
+<div class="flex text-amber-500 text-[14px]">
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="star_half">star_half</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">(1,420)</span>
+</div>
+<!-- Price Cluster -->
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-price-card text-price-card text-secondary-container">$89.00</span>
+<span class="font-price-strikethrough text-price-strikethrough text-outline line-through">$155.00</span>
+</div>
+<!-- Claim Bar -->
+<div class="w-full flex flex-col gap-1 mt-1">
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 78%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span class="text-secondary font-bold">78% claimed</span>
+<span>Only 14 left</span>
+</div>
+</div>
+<button class="mt-2 w-full bg-primary hover:bg-on-surface-variant text-surface-container-lowest font-label-md text-label-md py-2 rounded-lg transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+              Add to Bag
+            </button>
+</div>
+</div>
+<!-- Deal Item 2 -->
+<div class="border border-outline-variant hover:border-outline rounded-lg p-3 bg-surface flex flex-col justify-between transition-all hover:shadow-md relative group">
+<div class="relative w-full aspect-square bg-surface-container-lowest rounded overflow-hidden mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Minimalist designer sunglasses with black acetate frame and gradient tint lenses displayed cleanly on smooth limestone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoxwrCpW5qiFFGUa5iWAK3ZGQE1UAN1jkBBmKJmJXnpz48JKr9IUrhtOLaj3IsaiM704c9HUKHz5IlAhIV8iIvzZhhIERV32QPtvW_vkLMqlyCJ4L2NRxIqbVZ5V8I7eQE3IGNWMTB3nVtTRi77Cx1bQkd55abyBoWlFF_NentaHGMQtyZMped9T0-uTimWJoHq11U51OkFXAtfV_XrEeNOEtGG8i3C1EWMY0GTQW98FGsoTLg69ZGcQ"/>
+<span class="absolute top-2 left-2 bg-secondary-container text-surface-container-lowest font-label-sm text-label-sm px-1.5 py-0.5 rounded uppercase">-35% OFF</span>
+<button class="absolute top-2 right-2 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-sm flex items-center justify-center text-outline hover:text-secondary transition-colors" title="Wishlist">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="text-outline font-label-sm text-label-sm uppercase">ASOS LUXE</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 leading-snug">
+              Square Beveled Acetate Frame UV400 Sunglasses in Jet
+            </h3>
+<div class="flex items-center gap-1.5 mt-0.5">
+<div class="flex text-amber-500 text-[14px]">
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">(642)</span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-price-card text-price-card text-secondary-container">$38.50</span>
+<span class="font-price-strikethrough text-price-strikethrough text-outline line-through">$59.00</span>
+</div>
+<div class="w-full flex flex-col gap-1 mt-1">
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 92%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span class="text-secondary font-bold">92% claimed</span>
+<span>Almost gone</span>
+</div>
+</div>
+<button class="mt-2 w-full bg-primary hover:bg-on-surface-variant text-surface-container-lowest font-label-md text-label-md py-2 rounded-lg transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+              Add to Bag
+            </button>
+</div>
+</div>
+<!-- Deal Item 3 -->
+<div class="border border-outline-variant hover:border-outline rounded-lg p-3 bg-surface flex flex-col justify-between transition-all hover:shadow-md relative group">
+<div class="relative w-full aspect-square bg-surface-container-lowest rounded overflow-hidden mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Active spatial noise cancelling matte white wireless earbuds sitting upright in their opened compact magnetic charging case." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4YRr6TQFHz_mCRRlTFe3_BycnIllhpuGqvDJRPWuO4dTaBsWpSBx0zFCePFXw7zIvDItZ9W80G1xbqFNAqmlrt9mDAxPoJEgMbmoWW7gdc4j0dWqoH7QznshFIHQM-0d5QEi2v7eF2__mHN38k39ODT5sIK7lBOKyvPzkW0elF2cehRs5TPb0VT8mmZp32hEFsu2W9v_Xg483h80cIzmUX30PfyyLruPxnT57OrJMZNJ7ciw8C7S9Iw"/>
+<span class="absolute top-2 left-2 bg-secondary-container text-surface-container-lowest font-label-sm text-label-sm px-1.5 py-0.5 rounded uppercase">-50% OFF</span>
+<button class="absolute top-2 right-2 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-sm flex items-center justify-center text-outline hover:text-secondary transition-colors" title="Wishlist">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="text-outline font-label-sm text-label-sm uppercase">SONIC LABS</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 leading-snug">
+              Aero ANC Earbuds with Spatial 3D Audio &amp; Wireless Dock
+            </h3>
+<div class="flex items-center gap-1.5 mt-0.5">
+<div class="flex text-amber-500 text-[14px]">
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="star_outline">star_outline</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">(3,890)</span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-price-card text-price-card text-secondary-container">$69.99</span>
+<span class="font-price-strikethrough text-price-strikethrough text-outline line-through">$140.00</span>
+</div>
+<div class="w-full flex flex-col gap-1 mt-1">
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 54%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span class="text-secondary font-bold">54% claimed</span>
+<span>In Stock</span>
+</div>
+</div>
+<button class="mt-2 w-full bg-primary hover:bg-on-surface-variant text-surface-container-lowest font-label-md text-label-md py-2 rounded-lg transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+              Add to Bag
+            </button>
+</div>
+</div>
+<!-- Deal Item 4 -->
+<div class="border border-outline-variant hover:border-outline rounded-lg p-3 bg-surface flex flex-col justify-between transition-all hover:shadow-md relative group">
+<div class="relative w-full aspect-square bg-surface-container-lowest rounded overflow-hidden mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Technical ballistic nylon commuter daypack with waterproof zippers and metal cobra buckle detailing shown against architectural concrete." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLjGTxNDJaJUIVaDTKYdIIenE4MDxzzu0H4DEeKrRYclpQm62II4LI0h2hQknvbv5brKYsZjGw-PSPkAoinNNMJrro_F1rIKSQZ8no8CtFDwQBUsQ34d4C5tBp7pqZWHqxPunaanWXSMxO5vL_CtSZfXhfx3UVDXOkaqMnCbJYMGRFPo8tAECfnsQymMqFGUBKq4_BxK__NOCjTiwBG7F8K19YNfhrD8b1EqnJa0MgS3MXa2YkuPSV7Q"/>
+<span class="absolute top-2 left-2 bg-secondary-container text-surface-container-lowest font-label-sm text-label-sm px-1.5 py-0.5 rounded uppercase">-30% OFF</span>
+<button class="absolute top-2 right-2 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-sm flex items-center justify-center text-outline hover:text-secondary transition-colors" title="Wishlist">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="text-outline font-label-sm text-label-sm uppercase">NEXUS ATELIER</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 leading-snug">
+              Tactical 24L Waterproof Everyday Carry Modular Backpack
+            </h3>
+<div class="flex items-center gap-1.5 mt-0.5">
+<div class="flex text-amber-500 text-[14px]">
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">(890)</span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-price-card text-price-card text-secondary-container">$112.00</span>
+<span class="font-price-strikethrough text-price-strikethrough text-outline line-through">$160.00</span>
+</div>
+<div class="w-full flex flex-col gap-1 mt-1">
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 63%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span class="text-secondary font-bold">63% claimed</span>
+<span>Fast Dispatch</span>
+</div>
+</div>
+<button class="mt-2 w-full bg-primary hover:bg-on-surface-variant text-surface-container-lowest font-label-md text-label-md py-2 rounded-lg transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+              Add to Bag
+            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. CURATED BENTO FEATURE: ASOS EDITORIAL + AMAZON PERSONALIZED RECOMMENDATIONS -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Bento Left Column: ASOS-Style Streetwear Lookbook (7 Columns) -->
+<div class="lg:col-span-7 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div>
+<span class="text-secondary-container font-label-sm text-label-sm uppercase tracking-wider font-bold">Editorial Curation</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Trending in Streetwear: Volume 04</h2>
+</div>
+<a class="text-on-surface hover:text-secondary-container font-label-md text-label-md flex items-center gap-1" href="#lookbook">
+<span>View full lookbook</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="arrow_outward">arrow_outward</span>
+</a>
+</div>
+<!-- Featured Editorial Image with Floating Quick-Shop Tags -->
+<div class="relative w-full h-[320px] rounded-lg overflow-hidden border border-outline-variant mb-4">
+<img class="w-full h-full object-cover" data-alt="Two streetwear models styled in relaxed neutral tone utility wear, oversized linen cargo pants, and structured technical windbreakers against raw brutalist architectural walls." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU2yq7wA7Crw43jiG1PZ5F2ZmfOAQLZIjeVu_Ii-1mYzECMsFkpyWGlNXsXCLZwUCzfbNsRa7C3nij5VsemrgtF0ataie6D_jD16Oy5YvhiOqmttC7ltpg0Tw5c5HOe-4o2zjdmICVpLD5PUhDFx0pw1D89MHkqdeU1M_gf037oZ6t1cEQ546z7fM3v_TMHXshmHJ_pTeQK_IO13MuAf8-hKZdT8osMMLy2K8cRFjzQlHakEinz5Szzg"/>
+<!-- Quick Shop Interactive Tag 1 -->
+<div class="absolute top-1/3 left-1/4 group cursor-pointer">
+<div class="w-7 h-7 rounded-full bg-surface-container-lowest/90 backdrop-blur shadow-md flex items-center justify-center border border-outline-variant hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[16px] text-secondary-container" data-icon="sell">sell</span>
+</div>
+<div class="hidden group-hover:flex absolute left-8 top-0 bg-primary-container text-surface-container-lowest p-2 rounded shadow-lg text-left w-40 flex-col z-20">
+<span class="font-label-sm text-label-sm">Cropped Tech Vest</span>
+<span class="font-price-card text-price-card text-secondary-fixed">$64.00</span>
+</div>
+</div>
+<!-- Quick Shop Interactive Tag 2 -->
+<div class="absolute bottom-1/4 right-1/3 group cursor-pointer">
+<div class="w-7 h-7 rounded-full bg-surface-container-lowest/90 backdrop-blur shadow-md flex items-center justify-center border border-outline-variant hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[16px] text-secondary-container" data-icon="sell">sell</span>
+</div>
+<div class="hidden group-hover:flex absolute right-8 bottom-0 bg-primary-container text-surface-container-lowest p-2 rounded shadow-lg text-left w-44 flex-col z-20">
+<span class="font-label-sm text-label-sm">Wide-Leg Parachute Pant</span>
+<span class="font-price-card text-price-card text-secondary-fixed">$78.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3-Mini Carousel items under the Look -->
+<div class="grid grid-cols-3 gap-3">
+<div class="border border-outline-variant rounded p-2 flex flex-col gap-1 bg-surface">
+<img class="w-full h-24 object-cover rounded mb-1" data-alt="Unisex heavyweight washed grey oversized cotton tee displayed on hanger against white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyQGEOA7Q0cVqrwmf9oEENAREfMpYTRht6CxqBW1MtWO-EOHzfxLa0jTbVAdRv5udlIlkCqe4eGJbzNXyUclVEBkZQ7r8ziBdQF51hyeWRK5GEDkTwLWuxZheJJESmHVps_rpF_FwrJMa8EpWbY1e8wPUAESnTThqfcOnufsTQDOLQpKwZ6X3R1Pc5rgk7PZ-gj6IE2euYKv3IDXoRxzVG-MbflalMYe3gakwdZtkOZniLrpNkLt_DAg"/>
+<span class="font-label-sm text-label-sm text-on-surface truncate">Washed Boxy Tee</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">$32.00</span>
+</div>
+<div class="border border-outline-variant rounded p-2 flex flex-col gap-1 bg-surface">
+<img class="w-full h-24 object-cover rounded mb-1" data-alt="Beige technical bucket hat with removable chin strap and quick-dry waterproof coating." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCulfCSt65FkFAs_dok0tD0qsJkVsmxCEvcys5Tm4Q6OWSiUQT-srmJbpkHNDQLt1Ss5XaW0_qERuRuURgVWobnYbkTnWLPkLC1bnGzghxN6-jVFUSeF9fYHPKhuZKUynOmyuRUmn1rZLbXxP-cnFidTpLSoZ4tOrBHuRFgF5dIYWt8iknwdnq54vu58HW3wt8GIjnvEAD1DtSqEV9ib02fOLMtZT8_aL6z7ZyZma6IZPrXI2vd5PrO1A"/>
+<span class="font-label-sm text-label-sm text-on-surface truncate">Tactical Bucket Hat</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">$28.00</span>
+</div>
+<div class="border border-outline-variant rounded p-2 flex flex-col gap-1 bg-surface">
+<img class="w-full h-24 object-cover rounded mb-1" data-alt="Chunky platform retro runner sneaker in clean stone and olive accents on minimal studio pedestal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG4C3rwWe_vetG9f0kPba29PlasJVOPbqCBtEKZinfci_tNxKFKVVzSBVp83-JQzNVh8R9Ho-si4HCLaTR9cVezwYZiz3jRyRkYSbhjudbIldGIkzqGDRHuAc7eH8aXYU8g_evLp_eVCkMmDD6nZC4hA8dIN6hbLRjhGH60vPLydHyp_XDoWJufGlm0sc6gD_rFIE64qF9pBkS-giqtUa3aFGDJQCEbQAjlSCkIE_nvuOqhmMY4Q98Ng"/>
+<span class="font-label-sm text-label-sm text-on-surface truncate">Orbit Low Sneakers</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">$120.00</span>
+</div>
+</div>
+</div>
+<!-- Bento Right Column: "Keep Shopping For You" & Top Rated Tech (5 Columns) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Personalized Card (Amazon style) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Keep Shopping For You</h3>
+<a class="font-label-sm text-label-sm text-outline hover:text-on-surface" href="#history">View History</a>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Based on your recent interest in Workspace Gadgets</p>
+<div class="grid grid-cols-2 gap-3">
+<a class="border border-outline-variant rounded-lg p-2.5 hover:border-outline transition-colors bg-surface group" href="#item">
+<div class="w-full h-28 bg-surface-container-lowest rounded overflow-hidden mb-2">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Anodized aluminum dual monitor desk mount with integrated cable routing system and modern clean matte finish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMikYgF8m70LZaOai5KgDjAQqmSaE-DKb-mpvEcyJQ4OZifSvX1Rom-JdgXi39GFjMx4n6Ex9jncxdbz5UkRC8kaOJWG70v-YnKEZTmVv0geN12BoFO5VmN6UhH7TVgc7QKkJyVNPZx6kwxgjlahasQz2YYZyKcSHyeqzo-t_LbsRkVzh22FyV9xfCwPMdVFPIV8I84u0D_8sms_GfELkBXaEdmtZxijdU0_xsqPj8hgGcpsU8xQoetw"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface line-clamp-1">Aluminum Monitor Arm</span>
+<div class="flex items-baseline gap-1.5 mt-0.5">
+<span class="font-price-card text-price-card text-on-surface">$79.99</span>
+<span class="text-label-sm font-label-sm text-secondary-container">Prime</span>
+</div>
+</a>
+<a class="border border-outline-variant rounded-lg p-2.5 hover:border-outline transition-colors bg-surface group" href="#item">
+<div class="w-full h-28 bg-surface-container-lowest rounded overflow-hidden mb-2">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Natural woven wool felt desk pad protector with stitched edging for keyboard and precision wireless mouse." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcqkDxX-qsq7G_FZcLcdYbJg5A7eGu4lj9nx_nmCQZeG0WindjQh6wL5-DxJBFUE6zSMCS7-rJ-gND_CGr9K9AD6sujjrgHpYm-7CRKhhBctYuIutkCpOD1ocS8whGBZhIRk7AGfEUXT2ZPxmR1GVBKLXi2GLKhXXGzDIjvbVbmu44xtAl45-WOoDtkR07q02khOLcapGkg8sru5EGd5AUwBhbsGs-QL4fRTBClKqk8mQp-3myyVuz-g"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface line-clamp-1">Wool Felt Desk Mat</span>
+<div class="flex items-baseline gap-1.5 mt-0.5">
+<span class="font-price-card text-price-card text-on-surface">$29.50</span>
+<span class="text-label-sm font-label-sm text-secondary-container">Prime</span>
+</div>
+</a>
+</div>
+</div>
+<!-- Nexus Prime VIP Membership Banner -->
+<div class="bg-gradient-to-br from-primary-container to-inverse-surface text-surface-container-lowest rounded-xl p-5 border border-outline-variant flex items-center justify-between shadow-sm">
+<div class="flex flex-col gap-1 max-w-[280px]">
+<span class="text-secondary-fixed font-label-sm text-label-sm uppercase font-bold tracking-wider">Fast-Track Fulfillment</span>
+<h4 class="font-headline-md text-headline-md text-surface-container-lowest leading-snug">Nexus Prime: Zero-Fee Express Delivery</h4>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim">Unlimited 1-day shipping + early access to midnight drop tiers.</p>
+<button class="mt-2 bg-secondary-container hover:bg-secondary text-surface-container-lowest font-label-md text-label-md px-4 py-2 rounded-lg self-start transition-colors">
+              Try 30 Days Free
+            </button>
+</div>
+<div class="hidden sm:flex w-20 h-20 rounded-full bg-surface-container-lowest/10 border border-surface-container-lowest/20 items-center justify-center">
+<span class="material-symbols-outlined text-[42px] text-secondary-fixed" data-icon="rocket_launch">rocket_launch</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. TRUST, GUARANTEES & LOGISTICS STRIP -->
+<section class="border border-outline-variant bg-surface-container-lowest rounded-xl p-6 shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low border border-outline-variant flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[22px]" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Global Express Delivery</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Dispatched from local micro-fulfillment hubs across 48 states.</p>
+</div>
+</div>
+<div class="flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low border border-outline-variant flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[22px]" data-icon="published_with_changes">published_with_changes</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">30-Day Hassle-Free Returns</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Pre-printed return labels included in every parcel, no questions asked.</p>
+</div>
+</div>
+<div class="flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low border border-outline-variant flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[22px]" data-icon="shield">shield</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Nexus Buyer Protection</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Full refunds on items not matching catalog specs or damaged in transit.</p>
+</div>
+</div>
+<div class="flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low border border-outline-variant flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[22px]" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">24/7 Live Concierge</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Instant human resolution for shipping, size swaps, and billing.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- ================= FOOTER (SHARED COMPONENT) ================= -->
+<footer class="mt-12 bg-primary-container dark:bg-primary-container border-t border-outline-variant dark:border-outline text-primary-fixed dark:text-primary-fixed">
+<div class="w-full px-4 md:px-8 max-w-[1440px] mx-auto py-12 flex flex-col gap-8">
+<!-- Top Row: Brand & Secondary Category Directory -->
+<div class="grid grid-cols-1 md:grid-cols-5 gap-8 pb-8 border-b border-outline">
+<div class="md:col-span-2 flex flex-col gap-3">
+<span class="text-headline-md font-headline-md font-extrabold text-primary-fixed dark:text-primary-fixed tracking-tight uppercase">
+            NEXUS Market
+          </span>
+<p class="font-body-sm text-body-sm text-on-primary-container dark:text-on-primary-container max-w-sm">
+            The next-generation mega-marketplace combining hyper-speed global logistics with curated high-contrast apparel and cutting-edge tech hardware.
+          </p>
+<div class="flex items-center gap-3 mt-2">
+<a class="w-8 h-8 rounded bg-surface-container-highest/10 hover:bg-surface-container-highest/20 flex items-center justify-center text-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="share">share</span>
+</a>
+<a class="w-8 h-8 rounded bg-surface-container-highest/10 hover:bg-surface-container-highest/20 flex items-center justify-center text-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="public">public</span>
+</a>
+<a class="w-8 h-8 rounded bg-surface-container-highest/10 hover:bg-surface-container-highest/20 flex items-center justify-center text-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="forum">forum</span>
+</a>
+</div>
+</div>
+<!-- Links Column 1: Marketplace -->
+<div class="flex flex-col gap-2">
+<span class="font-headline-sm text-headline-sm text-primary-fixed">Shop &amp; Discover</span>
+<a class="text-on-primary-container hover:text-tertiary-fixed-dim font-body-sm text-body-sm transition-colors" href="#trending">Trending Deals</a>
+<a class="text-on-primary-container hover:text-tertiary-fixed-dim font-body-sm text-body-sm transition-colors" href="#new-in">New Arrivals</a>
+<a class="text-on-primary-container hover:text-tertiary-fixed-dim font-body-sm text-body-sm transition-colors" href="#tech">Tech &amp; Computing</a>
+<a class="text-on-primary-container hover:text-tertiary-fixed-dim font-body-sm text-body-sm transition-colors" href="#streetwear">Fashion Lookbooks</a>
+</div>
+<!-- Links Column 2: Merchant & Nexus Services -->
+<div class="flex flex-col gap-2">
+<span class="font-headline-sm text-headline-sm text-primary-fixed">Merchant Services</span>
+<a class="text-on-primary-container hover:text-tertiary-fixed-dim font-body-sm text-body-sm transition-colors" href="#sell">Sell on Nexus</a>
+<a class="text-on-primary-container hover:text-tertiary-fixed-dim font-body-sm text-body-sm transition-colors" href="#fulfillment">Nexus Fulfillment (FBN)</a>
+<a class="text-on-primary-container hover:text-tertiary-fixed-dim font-body-sm text-body-sm transition-colors" href="#ads">Advertise Your Products</a>
+<a class="text-on-primary-container hover:text-tertiary-fixed-dim font-body-sm text-body-sm transition-colors" href="#affiliates">Affiliate Creator Hub</a>
+</div>
+<!-- Links Column 3: Policy & Support -->
+<div class="flex flex-col gap-2">
+<span class="font-headline-sm text-headline-sm text-primary-fixed">Customer Care</span>
+<a class="text-on-primary-container hover:text-tertiary-fixed-dim font-body-sm text-body-sm transition-colors" href="#help">Help Center</a>
+<a class="text-on-primary-container hover:text-tertiary-fixed-dim font-body-sm text-body-sm transition-colors" href="#protection">Buyer Protection</a>
+<a class="text-on-primary-container hover:text-tertiary-fixed-dim font-body-sm text-body-sm transition-colors" href="#returns">Track Returns</a>
+<a class="text-on-primary-container hover:text-tertiary-fixed-dim font-body-sm text-body-sm transition-colors" href="#security">Security Center</a>
+</div>
+</div>
+<!-- Bottom Row: Mandatory JSON Links & Copyright -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-body-sm">
+<p class="text-on-primary-container dark:text-on-primary-container text-center md:text-left">
+          © 2024 NEXUS Market Inc. All rights reserved. Ultra-fast global fulfillment.
+        </p>
+<!-- Mandatory Links exactly from JSON -->
+<div class="flex flex-wrap items-center justify-center gap-6">
+<a class="text-on-primary-container dark:text-on-primary-container hover:text-tertiary-fixed-dim font-label-sm text-label-sm transition-colors" href="#about">About Us</a>
+<a class="text-on-primary-container dark:text-on-primary-container hover:text-tertiary-fixed-dim font-label-sm text-label-sm transition-colors" href="#sell">Sell on Nexus</a>
+<a class="text-on-primary-container dark:text-on-primary-container hover:text-tertiary-fixed-dim font-label-sm text-label-sm transition-colors" href="#help">Help Center</a>
+<a class="text-on-primary-container dark:text-on-primary-container hover:text-tertiary-fixed-dim font-label-sm text-label-sm transition-colors" href="#protection">Buyer Protection</a>
+<a class="text-on-primary-container dark:text-on-primary-container hover:text-tertiary-fixed-dim font-label-sm text-label-sm transition-colors" href="#terms">Terms of Service</a>
+<a class="text-on-primary-container dark:text-on-primary-container hover:text-tertiary-fixed-dim font-label-sm text-label-sm transition-colors" href="#privacy">Privacy Policy</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

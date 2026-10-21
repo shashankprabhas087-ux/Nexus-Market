@@ -1,0 +1,2 @@
+# Ignore PowerShell scripts that contain secrets
+*.ps1

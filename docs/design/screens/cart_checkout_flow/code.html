@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXUS Market - Shopping Cart &amp; Checkout</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config verbatim from instructions -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface-variant": "#45464d",
+            "tertiary": "#000000",
+            "tertiary-fixed": "#ffddb8",
+            "on-primary-container": "#7c839b",
+            "on-secondary-fixed": "#3d0600",
+            "on-secondary-container": "#570c00",
+            "on-secondary-fixed-variant": "#8c1900",
+            "inverse-surface": "#213145",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#eaf1ff",
+            "tertiary-fixed-dim": "#ffb95f",
+            "secondary-container": "#fd5835",
+            "on-primary-fixed-variant": "#3f465c",
+            "primary-fixed-dim": "#bec6e0",
+            "primary-fixed": "#dae2fd",
+            "on-background": "#0b1c30",
+            "secondary-fixed": "#ffdad2",
+            "surface-container-highest": "#d3e4fe",
+            "surface-variant": "#d3e4fe",
+            "surface-container": "#e5eeff",
+            "background": "#f8f9ff",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#2a1700",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#eff4ff",
+            "primary-container": "#131b2e",
+            "on-surface": "#0b1c30",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#653e00",
+            "outline-variant": "#c6c6cd",
+            "on-primary": "#ffffff",
+            "secondary-fixed-dim": "#ffb4a3",
+            "on-primary-fixed": "#131b2e",
+            "inverse-primary": "#bec6e0",
+            "surface-container-high": "#dce9ff",
+            "secondary": "#b52603",
+            "primary": "#000000",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "outline": "#76777d",
+            "surface-bright": "#f8f9ff",
+            "tertiary-container": "#2a1700",
+            "on-tertiary-container": "#b87500",
+            "surface-dim": "#cbdbf5",
+            "surface-tint": "#565e74",
+            "surface": "#f8f9ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin": "2rem",
+            "margin-mobile": "1rem",
+            "gutter": "1rem",
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.25rem",
+            "gutter-mobile": "0.5rem",
+            "space-md": "0.75rem"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "price-hero": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "price-strikethrough": ["Inter"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "price-card": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "display-hero-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "display-hero": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+            "price-hero": ["28px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+            "price-strikethrough": ["13px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+            "headline-sm": ["16px", {"lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+            "price-card": ["18px", {"lineHeight": "22px", "letterSpacing": "-0.015em", "fontWeight": "800"}],
+            "headline-md": ["20px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+            "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+            "headline-lg": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md antialiased selection:bg-secondary-container selection:text-surface-container-lowest">
+<!-- Minimalist Focused Checkout Header -->
+<header class="w-full bg-surface-container-lowest border-b border-outline-variant sticky top-0 z-40">
+<div class="max-w-[1440px] mx-auto px-4 md:px-8 h-20 flex items-center justify-between gap-4">
+<!-- Brand Logo Anchor -->
+<div class="flex items-center gap-3">
+<a class="font-headline-lg text-headline-lg font-extrabold text-on-surface tracking-tight uppercase flex items-center gap-2" href="#">
+<span>NEXUS</span>
+<span class="text-secondary-container text-xs px-2 py-0.5 rounded-lg bg-secondary-fixed text-on-secondary-container font-label-sm tracking-normal">MARKET</span>
+</a>
+</div>
+<!-- 3-Step Progress Indicator (Linear Focused Checkout) -->
+<nav aria-label="Checkout Progress" class="hidden md:flex items-center gap-6">
+<!-- Step 1: Active -->
+<div class="flex items-center gap-2 text-on-surface font-label-md">
+<span class="w-6 h-6 rounded-full bg-secondary-container text-surface-container-lowest flex items-center justify-center font-bold text-xs">1</span>
+<span class="text-on-surface font-bold border-b-2 border-secondary-container pb-0.5">Cart</span>
+</div>
+<span class="w-10 h-[1.5px] bg-outline-variant"></span>
+<!-- Step 2: Inactive -->
+<div class="flex items-center gap-2 text-outline font-label-md">
+<span class="w-6 h-6 rounded-full border border-outline-variant text-outline flex items-center justify-center font-semibold text-xs">2</span>
+<span>Delivery Address</span>
+</div>
+<span class="w-10 h-[1.5px] bg-outline-variant"></span>
+<!-- Step 3: Inactive -->
+<div class="flex items-center gap-2 text-outline font-label-md">
+<span class="w-6 h-6 rounded-full border border-outline-variant text-outline flex items-center justify-center font-semibold text-xs">3</span>
+<span>Payment &amp; Review</span>
+</div>
+</nav>
+<!-- Secure Checkout Indicator & Support -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px] text-on-surface">lock</span>
+<span class="hidden sm:inline">256-bit Encrypted</span>
+</div>
+<a class="text-on-surface-variant hover:text-secondary-container transition-colors font-label-md flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="hidden lg:inline">Help</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Main Content Container -->
+<main class="flex-grow max-w-[1440px] w-full mx-auto px-4 md:px-8 py-8 md:py-10">
+<!-- Title & Status Line -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-3 border-b border-outline-variant pb-4">
+<div>
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">Shopping Cart</h1>
+<span class="bg-surface-container text-on-surface-variant font-label-md text-label-md px-2.5 py-0.5 rounded-full">3 Items</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Review your selections, select warranty upgrades, and finalize order details.</p>
+</div>
+<a class="font-label-md text-label-md text-secondary-container hover:underline inline-flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+        Continue Shopping
+      </a>
+</div>
+<!-- 2-Column Split Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT COLUMN: Cart Items & Saved List (8 Cols) -->
+<section class="lg:col-span-8 flex flex-col gap-6">
+<!-- Free Shipping Progress Tracker Banner -->
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary-container">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</span>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">
+                Add <span class="text-secondary-container font-extrabold">$12.50</span> more for <span class="underline decoration-secondary-container font-extrabold">FREE Priority Express Delivery</span>
+</p>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container text-on-surface-variant px-2 py-1 rounded">88% Unlocked</span>
+</div>
+<!-- Progress Bar Track -->
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full transition-all duration-500" style="width: 88%;"></div>
+</div>
+</div>
+<!-- Cart Items List Container -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-outline-variant flex items-center justify-between bg-surface-container-lowest">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Standard &amp; Express Items</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Price</span>
+</div>
+<div class="divide-y divide-outline-variant">
+<!-- Item 1: Nexus SoundPro Ultra ANC Headphones -->
+<article class="p-6 flex flex-col sm:flex-row gap-5 hover:bg-surface-bright transition-colors duration-150">
+<div class="w-full sm:w-28 sm:h-28 h-48 bg-surface-container-low rounded-lg border border-outline-variant flex-shrink-0 relative overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A premium pair of matte arctic silver over-ear active noise cancelling headphones with memory foam cushions presented on an immaculate slate surface. The studio lighting reflects subtle crisp highlights along the sculpted metallic chassis against a modern clean light-mode backdrop emphasizing precision engineering and high fidelity acoustic design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmilT3k67Kw153YOF77BnGys8TV8iNy5x7aAagY81LkhKsRnM4KaPlZKydXGWZEDESIELOS1x9KVK04eY9W5d436xG2LPysfxxOoizmHxw5uJhcw1PhVvBOl1UxNjQ9TthBPO_TxzL4rV7vlLm7Xr469Ktkrx8nObOc-SHbOdYywPF_kAv7Oi3OoUDk5qSSpJVC6A3FTOXZXd9CcMLbp_wdrsc9Kj5HFmnpf7e4t4ZNYpG9QLqv33KHA"/>
+<span class="absolute top-1 left-1 bg-primary text-on-primary font-label-sm text-[10px] px-1.5 py-0.5 rounded uppercase">PRO</span>
+</div>
+<div class="flex-grow flex flex-col justify-between gap-3">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">NEXUS AUDIO LABS</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface hover:text-secondary-container cursor-pointer transition-colors">
+                      Nexus SoundPro Ultra ANC Headphones
+                    </h2>
+<div class="flex items-center gap-3 mt-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Color: <strong class="text-on-surface">Arctic Silver</strong></span>
+<span class="inline-block w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-emerald-600 font-bold">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        In Stock
+                      </span>
+</div>
+</div>
+<div class="text-right sm:flex-shrink-0">
+<span class="font-price-card text-price-card text-on-surface font-extrabold">$279.00</span>
+<div class="font-price-strikethrough text-price-strikethrough text-outline line-through">$349.00</div>
+</div>
+</div>
+<!-- Gift Checkbox -->
+<div class="flex items-center gap-2 pt-1">
+<input class="w-4 h-4 rounded text-secondary-container border-outline-variant focus:ring-secondary-container" id="gift-1" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface cursor-pointer select-none" for="gift-1">
+                    This order contains a gift (Free personalized packaging card)
+                  </label>
+</div>
+<!-- Action Controls: Qty & Mutators -->
+<div class="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-surface-container">
+<div class="flex items-center border border-outline-variant rounded-lg bg-surface-container-lowest">
+<button aria-label="Decrease quantity" class="w-8 h-8 flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="w-10 text-center font-headline-sm text-headline-sm font-bold text-on-surface">1</span>
+<button aria-label="Increase quantity" class="w-8 h-8 flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-error transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Delete</span>
+</button>
+<span class="text-outline-variant">|</span>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-secondary-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+<span>Save for later</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Item 2: ASOS Curated Oversized Boxy Heavyweight Hoodie -->
+<article class="p-6 flex flex-col sm:flex-row gap-5 hover:bg-surface-bright transition-colors duration-150">
+<div class="w-full sm:w-28 sm:h-28 h-48 bg-surface-container-low rounded-lg border border-outline-variant flex-shrink-0 relative overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="An editorial studio photo of an oversized boxy heavyweight streetwear hoodie in washed vintage black. The premium French terry texture and drop-shoulder craftsmanship are captured under soft diffused rim lighting, showcased in a crisp bright minimalist aesthetic suited for modern high-contrast apparel curation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoMuyG8zf4DWnUEahsohx2-WnnRSzv7Fr-NP9VsWuzn0N1Untfzf_VRDSG-4sI5mJdEXNBCD0pqDDA3bRuEGgtJ6QAy37eY8UkemKXOQgHinSSNoqaQDL_QEmTqXcLTIv_8garzP0vJwcRqBoysN1Dmia4FRkNmiF21vmdXWJT1NTAwKIsgEJN1wWBdutHQxgkrNW7fN1ejvhV1TRHdW6t8FgHebIe7pGGxsGf4MH-vB9q97VVtBfNKw"/>
+</div>
+<div class="flex-grow flex flex-col justify-between gap-3">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">ASOS CURATED APPAREL</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface hover:text-secondary-container cursor-pointer transition-colors">
+                      ASOS Curated Oversized Boxy Heavyweight Hoodie
+                    </h2>
+<div class="flex items-center gap-3 mt-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Size: <strong class="text-on-surface">L</strong></span>
+<span class="inline-block w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Color: <strong class="text-on-surface">Washed Black</strong></span>
+<span class="inline-block w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-emerald-600 font-bold">In Stock</span>
+</div>
+</div>
+<div class="text-right sm:flex-shrink-0">
+<span class="font-price-card text-price-card text-on-surface font-extrabold">$58.00</span>
+<div class="font-price-strikethrough text-price-strikethrough text-outline line-through">$85.00</div>
+</div>
+</div>
+<!-- Action Controls: Qty & Mutators -->
+<div class="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-surface-container">
+<div class="flex items-center border border-outline-variant rounded-lg bg-surface-container-lowest">
+<button aria-label="Decrease quantity" class="w-8 h-8 flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="w-10 text-center font-headline-sm text-headline-sm font-bold text-on-surface">1</span>
+<button aria-label="Increase quantity" class="w-8 h-8 flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-error transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Delete</span>
+</button>
+<span class="text-outline-variant">|</span>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-secondary-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+<span>Save for later</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Item 3: Smart MagSafe Fast Wireless Desk Charger -->
+<article class="p-6 flex flex-col sm:flex-row gap-5 hover:bg-surface-bright transition-colors duration-150">
+<div class="w-full sm:w-28 sm:h-28 h-48 bg-surface-container-low rounded-lg border border-outline-variant flex-shrink-0 relative overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A sleek anodized aluminum 3-in-1 magnetic wireless desk charger stand resting on a bright oak workstation. The geometric hardware boasts sharp minimalist angles, premium metallic finish, and high-tech elegance illuminated by bright daylight and crisp subtle ambient reflections in a clean light mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDemlMJ_N7AJJnSvy3S2jMmJMBFbXLfLPaOeeG0UGjIDUwVJ4Y7PF_5nuleHGa5ESrvHPsQV12WpZg-LiK9kDgunGKF7uZo9GnzPGvZkrFmUfHWEeds8mD7P6lBSuL-2LiVxnx9XAp0-_iYWPVtmsXzmun6lrGXassDZ-ggcxSeoIfr4jVDV0pum2FxSP3MGUtShSEFp9ekmR8CzwCiNRaJfU0fswbKbmUipUnmU4bKBir2jFj0kDBo0A"/>
+</div>
+<div class="flex-grow flex flex-col justify-between gap-3">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">HARDWARE &amp; ACCESSORIES</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface hover:text-secondary-container cursor-pointer transition-colors">
+                      Smart MagSafe Fast Wireless Desk Charger
+                    </h2>
+<div class="flex items-center gap-3 mt-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Finish: <strong class="text-on-surface">Space Gray / Oak</strong></span>
+<span class="inline-block w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-emerald-600 font-bold">In Stock</span>
+</div>
+</div>
+<div class="text-right sm:flex-shrink-0">
+<span class="font-price-card text-price-card text-on-surface font-extrabold">$34.50</span>
+<div class="font-price-strikethrough text-price-strikethrough text-outline line-through">$49.99</div>
+</div>
+</div>
+<!-- Action Controls: Qty & Mutators -->
+<div class="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-surface-container">
+<div class="flex items-center border border-outline-variant rounded-lg bg-surface-container-lowest">
+<button aria-label="Decrease quantity" class="w-8 h-8 flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="w-10 text-center font-headline-sm text-headline-sm font-bold text-on-surface">1</span>
+<button aria-label="Increase quantity" class="w-8 h-8 flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-error transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Delete</span>
+</button>
+<span class="text-outline-variant">|</span>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-secondary-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+<span>Save for later</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Promo Code & Gift Card Input Bar -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">redeem</span>
+<div>
+<p class="font-headline-sm text-headline-sm font-bold text-on-surface">Discount Code or Voucher</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Enter promotional codes or store certificates.</p>
+</div>
+</div>
+<div class="flex w-full sm:w-80 gap-2">
+<input class="w-full px-3 py-2 border border-outline-variant rounded-lg font-body-md text-on-surface focus:outline-none focus:border-on-surface" placeholder="e.g. FLASH20" type="text"/>
+<button class="px-5 py-2 bg-on-surface text-surface-container-lowest font-label-md rounded-lg hover:bg-on-surface-variant transition-colors active:scale-95">
+              Apply
+            </button>
+</div>
+</div>
+<!-- Saved for Later List -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 shadow-sm">
+<div class="flex items-center justify-between mb-5">
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Saved for Later</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Items you are tracking for future orders (2 items)</p>
+</div>
+<a class="font-label-md text-label-md text-secondary-container hover:underline" href="#">View All Wishlist</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Saved Card 1 -->
+<div class="border border-outline-variant rounded-lg p-4 flex gap-4 hover:border-outline transition-colors">
+<div class="w-20 h-20 bg-surface-container-low rounded border border-outline-variant overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A minimalist mechanical tactile keyboard featuring custom dye-sub PBT keycaps in cool slate grey and chalk white with subtle warm orange artisan accents. Clean overhead product photography on an uncluttered high-tech desk in a luminous white light-mode setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4rdw7RXk9wwI8GWunroDtVmLi2ltjSqzbOh_o2d9IBxCqffsagPUPF_RgZd3447xMo0vHytEKQOshdvODcLU8MfWcQbgufjHdlKMSb8qUyitYB3OI9owfa3or0U6UhEQWY9DHjchqcFm_RCTub8g0hxHSubP_YrN6y7UJpurlVUdWbK5UeIX5eK1bG0oBpa7ReFW5kEnQIzJa-ZbJxupvPcLcfsbgRv49gZslzl9YhzhQ8_ckwHqYFQ"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<h3 class="font-headline-sm text-[14px] leading-tight font-bold text-on-surface line-clamp-1">Nexus CyberKey Pro 75% Mechanical Keyboard</h3>
+<div class="font-price-card text-[15px] font-bold text-on-surface mt-1">$149.00</div>
+<span class="font-label-sm text-[10px] text-emerald-600 font-semibold">In Stock</span>
+</div>
+<div class="flex items-center gap-3 mt-2">
+<button class="font-label-md text-label-md text-secondary-container hover:underline font-bold">Move to Cart</button>
+<span class="text-outline-variant">|</span>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-error">Remove</button>
+</div>
+</div>
+</div>
+<!-- Saved Card 2 -->
+<div class="border border-outline-variant rounded-lg p-4 flex gap-4 hover:border-outline transition-colors">
+<div class="w-20 h-20 bg-surface-container-low rounded border border-outline-variant overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="An ultra-durable braided fast charging USB-C silicone cable coiled neatly with a premium brushed brass cable wrap. High contrast product photography illuminated by neutral crisp studio lighting on a pristine minimalist surface with deep graphite shadows and clean whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYpZt15MCTyttt2TnmLajMVxgSlTR6zkIHj33vtWs6xZDGIdZQNqqmtBeDsanM9LdrVouNlXCvZx-7god-gGwD0Fyt6_ow8EnRbmMFgzXFTzhuS8tPsL-MBFpub9U7-q3W70sXlk80zDZK96KEbJaQ0HGRqW4B0B-p1GUWHGoauW01Q2qhHAUXVfSIQVkS9T1YGBFSlIellJZydteYiCr23-NUpAmEyZzQRCfuFSTU0lA2h_m4sv_Nww"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<h3 class="font-headline-sm text-[14px] leading-tight font-bold text-on-surface line-clamp-1">Heavy-Duty Braided 240W Cable (2m)</h3>
+<div class="font-price-card text-[15px] font-bold text-on-surface mt-1">$19.99</div>
+<span class="font-label-sm text-[10px] text-emerald-600 font-semibold">In Stock</span>
+</div>
+<div class="flex items-center gap-3 mt-2">
+<button class="font-label-md text-label-md text-secondary-container hover:underline font-bold">Move to Cart</button>
+<span class="text-outline-variant">|</span>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-error">Remove</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<!-- RIGHT COLUMN: Sticky Order Summary & Instant Checkout (4 Cols) -->
+<aside class="lg:col-span-4 lg:sticky lg:top-24 flex flex-col gap-5">
+<!-- Summary Box -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 shadow-sm">
+<h2 class="font-headline-md text-headline-md font-extrabold text-on-surface pb-4 border-b border-outline-variant flex items-center justify-between">
+<span>Order Summary</span>
+<span class="font-body-sm text-body-sm font-normal text-on-surface-variant">USD ($)</span>
+</h2>
+<!-- Price Calculations -->
+<div class="py-4 space-y-3 border-b border-outline-variant font-body-md text-body-md">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Subtotal (3 items)</span>
+<span class="font-semibold text-on-surface">$371.50</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="flex items-center gap-1.5">
+                Shipping &amp; Handling
+                <span class="material-symbols-outlined text-[16px] text-outline cursor-pointer" title="Calculated based on standard express tier">info</span>
+</span>
+<div class="text-right">
+<span class="font-bold text-emerald-600 uppercase text-xs tracking-wider">FREE</span>
+<span class="block font-body-sm text-[11px] text-on-surface-variant">(Nexus Prime applied)</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="flex items-center gap-1.5">
+                Estimated Tax
+                <span class="material-symbols-outlined text-[16px] text-outline cursor-pointer" title="Estimated state/local sales tax">info</span>
+</span>
+<span class="font-semibold text-on-surface">$32.90</span>
+</div>
+<!-- Savings Banner inside card -->
+<div class="bg-secondary-fixed/50 border border-secondary-fixed-dim rounded-lg p-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">savings</span>
+<p class="font-label-md text-label-md text-on-secondary-container">
+                You saved <strong>$120.00</strong> today!
+              </p>
+</div>
+</div>
+<!-- Total Due -->
+<div class="pt-4 pb-6 flex items-baseline justify-between">
+<div>
+<span class="font-headline-md text-headline-md font-extrabold text-on-surface block">Total</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Includes all duties and fees</span>
+</div>
+<div class="text-right">
+<span class="font-price-hero text-price-hero text-on-surface font-extrabold tracking-tight">$404.40</span>
+</div>
+</div>
+<!-- Primary CTA Button -->
+<button class="w-full h-12 bg-secondary-container text-surface-container-lowest hover:bg-secondary font-label-md text-label-md rounded-lg shadow transition-all duration-150 flex items-center justify-center gap-2 font-bold active:scale-[0.98]">
+<span>Proceed to Checkout</span>
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</button>
+<!-- Express 1-Click Checkout Cluster -->
+<div class="mt-6">
+<div class="relative flex py-2 items-center">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink mx-3 font-label-sm text-label-sm text-outline uppercase tracking-wider">Or Express Checkout</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<div class="grid grid-cols-3 gap-2.5 mt-2">
+<!-- Apple Pay -->
+<button class="h-10 border border-outline-variant bg-black hover:bg-neutral-800 text-white rounded-lg flex items-center justify-center transition-all duration-150 shadow-sm active:scale-95" title="Pay with Apple Pay">
+<span class="font-headline-sm text-xs font-extrabold tracking-tighter">Pay</span>
+</button>
+<!-- Google Pay -->
+<button class="h-10 border border-outline-variant bg-surface-container-lowest hover:bg-surface-container text-on-surface rounded-lg flex items-center justify-center font-bold text-xs tracking-tight transition-all duration-150 shadow-sm active:scale-95" title="Pay with Google Pay">
+<span class="font-headline-sm text-xs font-bold text-on-surface">G Pay</span>
+</button>
+<!-- PayPal -->
+<button class="h-10 border border-outline-variant bg-[#ffc439] hover:bg-[#f4bb34] text-[#003087] rounded-lg flex items-center justify-center font-bold text-xs italic tracking-tight transition-all duration-150 shadow-sm active:scale-95" title="Pay with PayPal">
+<span class="font-headline-sm text-xs font-black">PayPal</span>
+</button>
+</div>
+</div>
+<!-- Guarantees & Buyer Protection Micro-badges -->
+<div class="mt-6 pt-5 border-t border-outline-variant space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-[20px] flex-shrink-0">verified_user</span>
+<span><strong>Nexus Buyer Protection:</strong> Full refund if package fails to arrive or doesn't match SKU description.</span>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-on-surface text-[20px] flex-shrink-0">replay</span>
+<span><strong>30-Day Hassle-Free Returns:</strong> Free drop-off shipping at over 5,000 local nexus locker hubs.</span>
+</div>
+</div>
+</div>
+<!-- Help & Advisory Support Card -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant p-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest border border-outline-variant flex items-center justify-center text-on-surface flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[13px] font-bold text-on-surface">Need immediate assistance?</h4>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Our concierge is live 24/7. <a class="text-secondary-container hover:underline font-bold" href="#">Chat now</a> or call 1-800-NEXUS.</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer verbatim from Shared Components JSON -->
+<footer class="bg-primary-container dark:bg-primary-container border-t border-outline-variant dark:border-outline text-primary-fixed dark:text-primary-fixed mt-16">
+<div class="w-full px-4 md:px-8 max-w-[1440px] mx-auto py-12 flex flex-col gap-8">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6 border-b border-primary-container">
+<div>
+<span class="text-headline-md font-headline-md font-extrabold text-primary-fixed dark:text-primary-fixed tracking-tight uppercase">
+            NEXUS MARKET
+          </span>
+<p class="text-body-sm font-body-sm text-on-primary-container dark:text-on-primary-container mt-1 max-w-md">
+            © 2024 NEXUS Market Inc. All rights reserved. Ultra-fast global fulfillment.
+          </p>
+</div>
+<div class="flex flex-wrap gap-x-6 gap-y-2">
+<a class="text-on-primary-container dark:text-on-primary-container text-label-sm font-label-sm hover:text-tertiary-fixed-dim transition-colors duration-150" href="#">About Us</a>
+<a class="text-on-primary-container dark:text-on-primary-container text-label-sm font-label-sm hover:text-tertiary-fixed-dim transition-colors duration-150" href="#">Sell on Nexus</a>
+<a class="text-on-primary-container dark:text-on-primary-container text-label-sm font-label-sm hover:text-tertiary-fixed-dim transition-colors duration-150" href="#">Help Center</a>
+<a class="text-on-primary-container dark:text-on-primary-container text-label-sm font-label-sm hover:text-tertiary-fixed-dim transition-colors duration-150" href="#">Buyer Protection</a>
+<a class="text-on-primary-container dark:text-on-primary-container text-label-sm font-label-sm hover:text-tertiary-fixed-dim transition-colors duration-150" href="#">Terms of Service</a>
+<a class="text-on-primary-container dark:text-on-primary-container text-label-sm font-label-sm hover:text-tertiary-fixed-dim transition-colors duration-150" href="#">Privacy Policy</a>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between text-body-sm font-body-sm text-on-primary-container dark:text-on-primary-container gap-4">
+<span>Payment Security Guaranteed by Nexus Enterprise TLS 1.3 &amp; PCI-DSS Level 1 Compliant.</span>
+<div class="flex items-center gap-4 text-xs">
+<span>Global Hubs: USA • UK • DE • JP • SG</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
