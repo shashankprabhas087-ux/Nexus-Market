@@ -22,7 +22,7 @@ const DEFAULT_USER = {
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
     try {
-      const local = window.localStorage.getItem('nexus_auth_user');
+      const local = window.localStorage.getItem('nexus_auth_session');
       return local ? JSON.parse(local) : null;
     } catch {
       return null;
@@ -30,11 +30,13 @@ export function AuthProvider({ children }) {
   });
 
   useEffect(() => {
+    // Clear any old key from previous version
+    window.localStorage.removeItem('nexus_auth_user');
     try {
       if (user) {
-        window.localStorage.setItem('nexus_auth_user', JSON.stringify(user));
+        window.localStorage.setItem('nexus_auth_session', JSON.stringify(user));
       } else {
-        window.localStorage.removeItem('nexus_auth_user');
+        window.localStorage.removeItem('nexus_auth_session');
       }
     } catch (e) {
       console.warn('Failed to sync auth user to localStorage', e);
